@@ -1,0 +1,72 @@
+cpu  855359 38 1142319 95570920 15413 0 27958 0 0 0
+cpu0 59768 2 133459 9541073 1713 0 15667 0 0 0
+cpu1 85742 0 108471 9562778 2195 0 4400 0 0 0
+cpu2 88133 0 114090 9556519 1805 0 2046 0 0 0
+cpu3 88999 0 113491 9556606 1925 0 1412 0 0 0
+cpu4 89926 3 112864 9557039 1392 0 1035 0 0 0
+cpu5 88716 5 111944 9559186 1413 0 869 0 0 0
+cpu6 89960 3 112731 9557330 1329 0 731 0 0 0
+cpu7 87127 8 112171 9561064 1189 0 678 0 0 0
+cpu8 89037 14 111723 9559137 1289 0 573 0 0 0
+cpu9 87948 0 111373 9560183 1158 0 543 0 0 0
+intr 344759671 0 4498948 130980234 0 0 0 1675 0 0 0 164398595 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 0 32443 0 864179 0 340 0 764062 457970 0 0 1605 0 19596 32222 0 0 26430 42681315 0 49 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ctxt 540528665
+btime 1795187012
+processes 1731672
+procs_running 2
+procs_blocked 0
+softirq 70038177 4 6651625 242 4685909 887691 0 687 19458790 0 38353229
+MemTotal:        8112328 kB
+MemFree:         6173200 kB
+MemAvailable:    7548720 kB
+Buffers:          242264 kB
+Cached:          1075932 kB
+SwapCached:            0 kB
+Active:           662728 kB
+Inactive:         841708 kB
+Active(anon):     140060 kB
+Inactive(anon):    47008 kB
+Active(file):     522668 kB
+Inactive(file):   794700 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:                72 kB
+Writeback:             0 kB
+AnonPages:        186204 kB
+Mapped:            82144 kB
+Shmem:               828 kB
+KReclaimable:     265608 kB
+Slab:             388804 kB
+SReclaimable:     265608 kB
+SUnreclaim:       123196 kB
+KernelStack:        4344 kB
+ShadowCallStack:    1216 kB
+PageTables:         3920 kB
+SecPageTables:         0 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     4056164 kB
+Committed_AS:    1267568 kB
+VmallocTotal:   133141626880 kB
+VmallocUsed:       11372 kB
+VmallocChunk:          0 kB
+Percpu:             4640 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+CmaTotal:          32768 kB
+CmaFree:            7508 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB

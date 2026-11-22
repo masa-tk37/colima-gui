@@ -1,0 +1,31 @@
+{
+  "fill" : {
+    "automatic-gradient" : "extended-srgb:0.06275,0.47843,0.66667,1.00000"
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "image-name" : "ribs.svg",
+          "name" : "ribs"
+        },
+        {
+          "glass" : true,
+          "image-name" : "faces.svg",
+          "name" : "faces"
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.4
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "squares" : "shared"
+  }
+}

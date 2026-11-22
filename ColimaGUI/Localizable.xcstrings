@@ -1,0 +1,106 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "A VM operation is in progress" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM の操作が実行中です"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        }
+      }
+    },
+    "Colima" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colima"
+          }
+        }
+      }
+    },
+    "If you quit now, the colima command already running finishes in the background, but its output and result are not shown. A restart or recreation stops after the current step: the remaining steps do not run. Quitting this app does not stop the VM." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今すぐ終了すると、実行中の colima コマンドはバックグラウンドで最後まで進みますが、出力と結果は表示されません。再起動や作り直しは今の段階で止まり、残りの段階は実行されません。このアプリを終了しても VM は停止しません。"
+          }
+        }
+      }
+    },
+    "Open Login Items Settings" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログイン項目の設定を開く"
+          }
+        }
+      }
+    },
+    "Operation log" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "操作ログ"
+          }
+        }
+      }
+    },
+    "Quit now" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今すぐ終了"
+          }
+        }
+      }
+    },
+    "Quit when finished" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了後に終了"
+          }
+        }
+      }
+    },
+    "The background helper is turned off" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バックグラウンドヘルパーがオフになっています"
+          }
+        }
+      }
+    },
+    "VM operations need it. Turn on ColimaGUI in Login Items & Extensions." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM の操作に必要です。「ログイン項目と機能拡張」で ColimaGUI をオンにしてください。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

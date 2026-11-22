@@ -1,0 +1,24 @@
+[
+  {
+    "Containers": 5,
+    "Created": 1795205079,
+    "Id": "sha256:a731f68fd7e3a3d084e5936b8213042fe4efc67d4ee89d6415f04d0e88036948",
+    "Labels": {},
+    "ParentId": "",
+    "Descriptor": {
+      "mediaType": "application/vnd.docker.distribution.manifest.list.v2+json",
+      "digest": "sha256:a731f68fd7e3a3d084e5936b8213042fe4efc67d4ee89d6415f04d0e88036948",
+      "size": 743
+    },
+    "RepoDigests": [
+      "cgprobe-img@sha256:a731f68fd7e3a3d084e5936b8213042fe4efc67d4ee89d6415f04d0e88036948"
+    ],
+    "RepoTags": [
+      "amazon/aws-cli:latest",
+      "cgprobe-img:a",
+      "cgprobe-img:b"
+    ],
+    "SharedSize": -1,
+    "Size": 691953477
+  }
+]

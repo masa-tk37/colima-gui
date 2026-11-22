@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <clipPath id="cut">
+      <path clip-rule="evenodd" d="M0 0H18V18H0Z M14 9.2A4.8 4.8 0 1 0 14 18.8A4.8 4.8 0 1 0 14 9.2Z"/>
+    </clipPath>
+  </defs>
+  <g fill="#000000" clip-path="url(#cut)">
+    <polygon points="9.00,1.75 15.25,5.10 9.00,8.45 2.75,5.10"/>
+    <polygon points="2.48,5.58 8.52,9.27 8.72,16.32 2.68,12.63"/>
+    <polygon points="9.48,9.27 15.52,5.58 15.32,12.63 9.28,16.32"/>
+  </g>
+  <g fill="#000000"><path d="M14 17.3 L17 14 L15 14 L15 10.7 L13 10.7 L13 14 L11 14 Z"/></g>
+</svg>

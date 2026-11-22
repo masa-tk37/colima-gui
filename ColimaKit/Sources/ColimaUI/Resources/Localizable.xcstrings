@@ -1,0 +1,3122 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@: %2$@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@: %2$@"
+          }
+        }
+      }
+    },
+    "%lld containers" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld container"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld containers"
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 件"
+          }
+        }
+      }
+    },
+    "%lld containers, %lld running" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%#@containers@, %2$lld running"
+          },
+          "substitutions" : {
+            "containers" : {
+              "argNum" : 1,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg container"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg containers"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld 件・実行中 %2$lld 件"
+          }
+        }
+      }
+    },
+    "%lld cores" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld core"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld cores"
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld コア"
+          }
+        }
+      }
+    },
+    "%lld gaps" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld gap"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld gaps"
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "欠測 %lld 区間"
+          }
+        }
+      }
+    },
+    "%lld images, %@ in total" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%#@images@, %2$@ in total"
+          },
+          "substitutions" : {
+            "images" : {
+              "argNum" : 1,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg image"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg images"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "イメージ %1$lld 件・合計 %2$@"
+          }
+        }
+      }
+    },
+    "%lld items couldn't be deleted." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld item couldn't be deleted."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld items couldn't be deleted."
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 件は削除できませんでした。"
+          }
+        }
+      }
+    },
+    "%lld networks, %lld built in" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%#@networks@, %2$lld built in"
+          },
+          "substitutions" : {
+            "networks" : {
+              "argNum" : 1,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg network"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg networks"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワーク %1$lld 件・既定 %2$lld 件"
+          }
+        }
+      }
+    },
+    "%lld seconds ago" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld second ago"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld seconds ago"
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 秒前"
+          }
+        }
+      }
+    },
+    "%lld volumes of unknown size are not included in the estimate." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld volume of unknown size is not included in the estimate."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld volumes of unknown size are not included in the estimate."
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サイズが不明な %lld 件は推定に含まれません。"
+          }
+        }
+      }
+    },
+    "%lld volumes, %lld in use" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%#@volumes@, %2$lld in use"
+          },
+          "substitutions" : {
+            "volumes" : {
+              "argNum" : 1,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg volume"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg volumes"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボリューム %1$lld 件・使用中 %2$lld 件"
+          }
+        }
+      }
+    },
+    "A confirmation will appear. If you approve, the VM is deleted and recreated." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認が表示されます。承認すると VM を削除して作り直します。"
+          }
+        }
+      }
+    },
+    "A data disk may remain" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データディスクが残っている可能性があります"
+          }
+        }
+      }
+    },
+    "A data disk may remain. Creating the VM may reattach it." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データディスクが残っている可能性があります。作成すると、残っているデータディスクに再接続される場合があります。"
+          }
+        }
+      }
+    },
+    "A running container can't be deleted. Stop it first." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "実行中のコンテナは削除できません。先に停止してください。"
+          }
+        }
+      }
+    },
+    "Abort" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中止"
+          }
+        }
+      }
+    },
+    "All running" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全て実行中"
+          }
+        }
+      }
+    },
+    "All stopped" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全て停止"
+          }
+        }
+      }
+    },
+    "An anonymous volume created automatically when a container was created" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナの作成時に自動で作られた匿名ボリューム"
+          }
+        }
+      }
+    },
+    "Anonymous" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "匿名"
+          }
+        }
+      }
+    },
+    "Another network is being created. Wait for it to finish, then try again." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "別のネットワークを作成中です。完了してからもう一度お試しください。"
+          }
+        }
+      }
+    },
+    "Another operation is running" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ほかの操作を実行中です"
+          }
+        }
+      }
+    },
+    "Architecture" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アーキテクチャ"
+          }
+        }
+      }
+    },
+    "Auto-scroll paused" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動スクロールを停止中"
+          }
+        }
+      }
+    },
+    "Broken" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "異常（Broken）"
+          }
+        }
+      }
+    },
+    "Built in" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "既定"
+          }
+        }
+      }
+    },
+    "Built-in networks can't be deleted." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "組み込みネットワークは削除できません。"
+          }
+        }
+      }
+    },
+    "CPU" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CPU"
+          }
+        }
+      }
+    },
+    "Can't check the VM status" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM の状態を確認できません"
+          }
+        }
+      }
+    },
+    "Can't connect to the Docker engine" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker エンジンに接続できません"
+          }
+        }
+      }
+    },
+    "Can't disconnect: this container is running another operation." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このコンテナは別の操作を実行中のため、切断を始められません。"
+          }
+        }
+      }
+    },
+    "Can't load containers" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナの一覧を取得できません"
+          }
+        }
+      }
+    },
+    "Can't load images" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "イメージの一覧を取得できません"
+          }
+        }
+      }
+    },
+    "Can't load networks" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワークの一覧を取得できません"
+          }
+        }
+      }
+    },
+    "Can't load the container" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナを取得できません"
+          }
+        }
+      }
+    },
+    "Can't load volumes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボリュームの一覧を取得できません"
+          }
+        }
+      }
+    },
+    "Can't recreate: the executables required for %@ were not found: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can't recreate: the executables required for %1$@ were not found: %2$@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ に必要な実行ファイルが見つからないため、作り直せません: %2$@"
+          }
+        }
+      }
+    },
+    "Can't retry: another operation is running" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ほかの操作を実行中のため、再試行できません"
+          }
+        }
+      }
+    },
+    "Can't retry: the executables required for %@ were not found: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can't retry: the executables required for %1$@ were not found: %2$@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ に必要な実行ファイルが見つからないため、再試行できません: %2$@"
+          }
+        }
+      }
+    },
+    "Can't retry: the target VM type is the same as the current one" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作り直し先の VM タイプが現在と同じため、再試行できません"
+          }
+        }
+      }
+    },
+    "Can't run this while another operation is running." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ほかの操作を実行中のため、実行できません。"
+          }
+        }
+      }
+    },
+    "Can't show stats" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "統計を表示できません"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        }
+      }
+    },
+    "Cause" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "原因"
+          }
+        }
+      }
+    },
+    "Changing the VM type recreates the VM. All data inside the VM is deleted." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM タイプを変えるには VM を作り直します。VM の中のデータはすべて削除されます。"
+          }
+        }
+      }
+    },
+    "Checking prerequisites" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "事前確認"
+          }
+        }
+      }
+    },
+    "Checking the VM status" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM の状態を確認中"
+          }
+        }
+      }
+    },
+    "Choose a container from the list to see its details, logs, and stats." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一覧からコンテナを選ぶと、詳細・ログ・統計を表示します。"
+          }
+        }
+      }
+    },
+    "Choose…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択してください"
+          }
+        }
+      }
+    },
+    "Close" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "閉じる"
+          }
+        }
+      }
+    },
+    "Colima not found" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colima が見つかりません"
+          }
+        }
+      }
+    },
+    "Colima: Running" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colima: 稼働中"
+          }
+        }
+      }
+    },
+    "Colima: Starting" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colima: 起動中"
+          }
+        }
+      }
+    },
+    "Colima: Stopped" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colima: 停止中"
+          }
+        }
+      }
+    },
+    "Colima: Stopping" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colima: 停止処理中"
+          }
+        }
+      }
+    },
+    "Collapse %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ を折りたたむ"
+          }
+        }
+      }
+    },
+    "Completed" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
+          }
+        }
+      }
+    },
+    "Connect" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続"
+          }
+        }
+      }
+    },
+    "Connect to network" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワークに接続"
+          }
+        }
+      }
+    },
+    "Connected containers" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続中のコンテナ"
+          }
+        }
+      }
+    },
+    "Connected networks" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続中のネットワーク"
+          }
+        }
+      }
+    },
+    "Container logs" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナのログ"
+          }
+        }
+      }
+    },
+    "Container not found" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナが見つかりません"
+          }
+        }
+      }
+    },
+    "Containers" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナ"
+          }
+        }
+      }
+    },
+    "Containers without a project" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プロジェクトに属さないコンテナ"
+          }
+        }
+      }
+    },
+    "Containers you create appear here." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナを作成すると、ここに表示されます。"
+          }
+        }
+      }
+    },
+    "Content" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示する内容"
+          }
+        }
+      }
+    },
+    "Could not read the container list" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナの一覧を取得できませんでした"
+          }
+        }
+      }
+    },
+    "Couldn't change the connection to network “%@”: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't change the connection to network “%1$@”: %2$@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワーク「%1$@」の接続の変更に失敗しました: %2$@"
+          }
+        }
+      }
+    },
+    "Couldn't create the VM" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成に失敗しました"
+          }
+        }
+      }
+    },
+    "Couldn't create the network because Docker is unavailable." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker が利用できない状態のため、作成できませんでした。"
+          }
+        }
+      }
+    },
+    "Couldn't create the network: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成に失敗しました: %@"
+          }
+        }
+      }
+    },
+    "Couldn't delete the container: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除に失敗しました: %@"
+          }
+        }
+      }
+    },
+    "Couldn't delete “%@”: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't delete “%1$@”: %2$@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%1$@」の削除に失敗しました: %2$@"
+          }
+        }
+      }
+    },
+    "Couldn't delete: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除に失敗しました: %@"
+          }
+        }
+      }
+    },
+    "Couldn't disconnect: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切断に失敗しました: %@"
+          }
+        }
+      }
+    },
+    "Couldn't load connected containers: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続中のコンテナを取得できません: %@"
+          }
+        }
+      }
+    },
+    "Couldn't load logs: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログの取得に失敗しました: %@"
+          }
+        }
+      }
+    },
+    "Couldn't load networks: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワークの一覧を取得できません: %@"
+          }
+        }
+      }
+    },
+    "Couldn't load the items to delete: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除対象を取得できませんでした: %@"
+          }
+        }
+      }
+    },
+    "Couldn't recreate the VM" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作り直しに失敗しました"
+          }
+        }
+      }
+    },
+    "Couldn't refresh: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最新の状態を取得できません: %@"
+          }
+        }
+      }
+    },
+    "Couldn't restart the VM" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再起動に失敗しました"
+          }
+        }
+      }
+    },
+    "Couldn't restart the container: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再起動に失敗しました: %@"
+          }
+        }
+      }
+    },
+    "Couldn't start connecting. Docker is unavailable, or this container is busy with another operation." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続を開始できませんでした。Docker が利用できないか、このコンテナが別の操作中です。"
+          }
+        }
+      }
+    },
+    "Couldn't start the VM" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "起動に失敗しました"
+          }
+        }
+      }
+    },
+    "Couldn't start the container: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "起動に失敗しました: %@"
+          }
+        }
+      }
+    },
+    "Couldn't stop the VM" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止に失敗しました"
+          }
+        }
+      }
+    },
+    "Couldn't stop the container: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止に失敗しました: %@"
+          }
+        }
+      }
+    },
+    "Create" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成"
+          }
+        }
+      }
+    },
+    "Create and start" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成して起動"
+          }
+        }
+      }
+    },
+    "Create network" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワークを作成"
+          }
+        }
+      }
+    },
+    "Created" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成日時"
+          }
+        }
+      }
+    },
+    "Created by Docker; it can't be deleted" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker が作成したため削除できません"
+          }
+        }
+      }
+    },
+    "Creating VM" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を作成中"
+          }
+        }
+      }
+    },
+    "Creating the VM may reattach the remaining data disk." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成すると、残っているデータディスクに再接続される場合があります。"
+          }
+        }
+      }
+    },
+    "Creating the VM may reattach the remaining data disk. To avoid reattaching it, start over from the deletion step." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成すると、残っているデータディスクに再接続される場合があります。再接続を避けるには、削除からやり直してください。"
+          }
+        }
+      }
+    },
+    "Creating…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成しています…"
+          }
+        }
+      }
+    },
+    "Creation date unknown" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成日時は不明"
+          }
+        }
+      }
+    },
+    "Dead" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "異常終了"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
+          }
+        }
+      }
+    },
+    "Delete networks that no running container is connected to" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "実行中のコンテナが接続していないネットワークを削除"
+          }
+        }
+      }
+    },
+    "Delete the selected image" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択したイメージを削除"
+          }
+        }
+      }
+    },
+    "Delete the selected network" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択したネットワークを削除"
+          }
+        }
+      }
+    },
+    "Delete the selected volume" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択したボリュームを削除"
+          }
+        }
+      }
+    },
+    "Delete unused" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未使用を削除"
+          }
+        }
+      }
+    },
+    "Delete volumes that no container uses" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "どのコンテナにも使われていないボリュームを削除"
+          }
+        }
+      }
+    },
+    "Deleted %lld networks." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Deleted %lld network."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Deleted %lld networks."
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 件のネットワークを削除しました。"
+          }
+        }
+      }
+    },
+    "Deleted %lld volumes. Estimated space reclaimed: %@." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Deleted %1$lld volume. Estimated space reclaimed: %2$@."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Deleted %1$lld volumes. Estimated space reclaimed: %2$@."
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld 件のボリュームを削除しました。回復した容量の推定は %2$@ です。"
+          }
+        }
+      }
+    },
+    "Deleted container" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除されたコンテナ"
+          }
+        }
+      }
+    },
+    "Deleting" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除中"
+          }
+        }
+      }
+    },
+    "Deleting VM" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を削除中"
+          }
+        }
+      }
+    },
+    "Deleting unused networks…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未使用のネットワークを削除しています…"
+          }
+        }
+      }
+    },
+    "Deleting unused volumes…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未使用のボリュームを削除しています…"
+          }
+        }
+      }
+    },
+    "Deletion finished, but the VM could not be confirmed as gone" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除は完了しましたが、VM が消えたことを確認できませんでした"
+          }
+        }
+      }
+    },
+    "Detect again" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再検出"
+          }
+        }
+      }
+    },
+    "Disconnect" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切断"
+          }
+        }
+      }
+    },
+    "Disconnect from the Networks screen." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切断はネットワークの画面で行います。"
+          }
+        }
+      }
+    },
+    "Disconnect “%@” from this network" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%@」をこのネットワークから切断"
+          }
+        }
+      }
+    },
+    "Disk" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスク"
+          }
+        }
+      }
+    },
+    "Dismiss failure" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "失敗の表示を閉じる"
+          }
+        }
+      }
+    },
+    "Docker" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker"
+          }
+        }
+      }
+    },
+    "Driver" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ドライバ"
+          }
+        }
+      }
+    },
+    "Elapsed time" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "経過時間"
+          }
+        }
+      }
+    },
+    "End of output" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "出力の末尾"
+          }
+        }
+      }
+    },
+    "Expand %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ を展開"
+          }
+        }
+      }
+    },
+    "Following" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "追従中"
+          }
+        }
+      }
+    },
+    "Gap end" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "欠測の終了"
+          }
+        }
+      }
+    },
+    "Gap start" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "欠測の開始"
+          }
+        }
+      }
+    },
+    "Gateway" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ゲートウェイ"
+          }
+        }
+      }
+    },
+    "General" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "基本情報"
+          }
+        }
+      }
+    },
+    "Hide this project's containers" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このプロジェクトのコンテナを隠す"
+          }
+        }
+      }
+    },
+    "Image" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "イメージ"
+          }
+        }
+      }
+    },
+    "Images" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "イメージ"
+          }
+        }
+      }
+    },
+    "Images you pull appear here." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "イメージを取得すると、ここに表示されます。"
+          }
+        }
+      }
+    },
+    "In progress" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "操作中"
+          }
+        }
+      }
+    },
+    "In use" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用中"
+          }
+        }
+      }
+    },
+    "Install Colima, then detect it again." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colima をインストールしてから、再検出してください。"
+          }
+        }
+      }
+    },
+    "Jump to end" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "末尾へ"
+          }
+        }
+      }
+    },
+    "Last failure: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "直前の失敗: %@"
+          }
+        }
+      }
+    },
+    "Latest %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最新 %@"
+          }
+        }
+      }
+    },
+    "Loading containers…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナを読み込み中…"
+          }
+        }
+      }
+    },
+    "Loading images…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "イメージを読み込み中…"
+          }
+        }
+      }
+    },
+    "Loading logs" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログを読み込み中"
+          }
+        }
+      }
+    },
+    "Loading networks…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワークを読み込み中…"
+          }
+        }
+      }
+    },
+    "Loading stats" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "統計を取得中"
+          }
+        }
+      }
+    },
+    "Loading volumes…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボリュームを読み込み中…"
+          }
+        }
+      }
+    },
+    "Loading…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "読み込み中…"
+          }
+        }
+      }
+    },
+    "Log streaming ended normally" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログの取得が終了しました（正常終了）"
+          }
+        }
+      }
+    },
+    "Logs" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログ"
+          }
+        }
+      }
+    },
+    "Maximum %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最大 %@"
+          }
+        }
+      }
+    },
+    "Memory" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メモリ"
+          }
+        }
+      }
+    },
+    "Missing" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "欠測"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前"
+          }
+        }
+      }
+    },
+    "Name error: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前の誤り: %@"
+          }
+        }
+      }
+    },
+    "Network" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続先"
+          }
+        }
+      }
+    },
+    "Networks" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワーク"
+          }
+        }
+      }
+    },
+    "Networks you create appear here." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワークを作成すると、ここに表示されます。"
+          }
+        }
+      }
+    },
+    "No VM operations yet" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM の操作はまだありません"
+          }
+        }
+      }
+    },
+    "No connected containers" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続しているコンテナはありません"
+          }
+        }
+      }
+    },
+    "No connected networks" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続しているネットワークはありません"
+          }
+        }
+      }
+    },
+    "No containers" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナがありません"
+          }
+        }
+      }
+    },
+    "No data" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データなし"
+          }
+        }
+      }
+    },
+    "No images" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "イメージがありません"
+          }
+        }
+      }
+    },
+    "No logs" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログはありません"
+          }
+        }
+      }
+    },
+    "No logs yet" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログはまだありません"
+          }
+        }
+      }
+    },
+    "No networks" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワークがありません"
+          }
+        }
+      }
+    },
+    "No networks available to connect" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続できるネットワークがありません"
+          }
+        }
+      }
+    },
+    "No output" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "出力なし"
+          }
+        }
+      }
+    },
+    "No output yet" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "出力はまだありません"
+          }
+        }
+      }
+    },
+    "No volumes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボリュームがありません"
+          }
+        }
+      }
+    },
+    "None" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "なし"
+          }
+        }
+      }
+    },
+    "Not created" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未作成"
+          }
+        }
+      }
+    },
+    "Nothing to delete" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除対象がありません"
+          }
+        }
+      }
+    },
+    "One CPU core is 100%, so a container using several cores can exceed 100%." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "100% が CPU 1 コア分です。複数のコアを使うコンテナでは 100% を超えます。"
+          }
+        }
+      }
+    },
+    "Open main window" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メインウィンドウを開く"
+          }
+        }
+      }
+    },
+    "Open the operation log when a VM operation starts" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM 操作の開始時に操作ログを開く"
+          }
+        }
+      }
+    },
+    "Open the window with colima's output" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "colima の出力を表示するウインドウを開く"
+          }
+        }
+      }
+    },
+    "Operation log" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "操作ログ"
+          }
+        }
+      }
+    },
+    "Output from the container appears here." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナが出力すると、ここに追加されます。"
+          }
+        }
+      }
+    },
+    "Overview" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "概要"
+          }
+        }
+      }
+    },
+    "Partially running" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一部実行中"
+          }
+        }
+      }
+    },
+    "Past logs of a stopped container (not following)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止中のコンテナの過去ログ（追従しません）"
+          }
+        }
+      }
+    },
+    "Paused" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一時停止"
+          }
+        }
+      }
+    },
+    "Project status: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プロジェクトの状態: %@"
+          }
+        }
+      }
+    },
+    "Published ports" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "公開ポート"
+          }
+        }
+      }
+    },
+    "Quit" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "終了"
+          }
+        }
+      }
+    },
+    "Recreate" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作り直し"
+          }
+        }
+      }
+    },
+    "Recreate VM" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を作り直す"
+          }
+        }
+      }
+    },
+    "Refresh" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新"
+          }
+        }
+      }
+    },
+    "Refresh the image list" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "イメージの一覧を更新"
+          }
+        }
+      }
+    },
+    "Refresh the network list" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワークの一覧を更新"
+          }
+        }
+      }
+    },
+    "Refresh the volume list" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボリュームの一覧を更新"
+          }
+        }
+      }
+    },
+    "Removing" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Removing"
+          }
+        }
+      }
+    },
+    "Repository" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リポジトリ"
+          }
+        }
+      }
+    },
+    "Required executables for %@ were not found: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Required executables for %1$@ were not found: %2$@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ に必要な実行ファイルが見つかりません: %2$@"
+          }
+        }
+      }
+    },
+    "Resources" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リソース"
+          }
+        }
+      }
+    },
+    "Restart" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再起動"
+          }
+        }
+      }
+    },
+    "Restart all" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて再起動"
+          }
+        }
+      }
+    },
+    "Restarting" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再起動中"
+          }
+        }
+      }
+    },
+    "Retry" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再試行"
+          }
+        }
+      }
+    },
+    "Retry recreate from deletion" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作り直しを削除から再試行"
+          }
+        }
+      }
+    },
+    "Running" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "稼働中"
+          }
+        }
+      }
+    },
+    "Runtime" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランタイム"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
+          }
+        }
+      }
+    },
+    "Saved. Restart the VM to apply the changes." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存しました。反映するには再起動が必要です。"
+          }
+        }
+      }
+    },
+    "Saved. The changes apply the next time the VM starts." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存しました。次回の起動時に反映されます。"
+          }
+        }
+      }
+    },
+    "Scope" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スコープ"
+          }
+        }
+      }
+    },
+    "Scroll to the end of the log and resume auto-scrolling" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログの末尾へ移動して、自動スクロールを再開する"
+          }
+        }
+      }
+    },
+    "Searched locations" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "探した場所"
+          }
+        }
+      }
+    },
+    "Segment" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "区間"
+          }
+        }
+      }
+    },
+    "Select a container" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナを選択してください"
+          }
+        }
+      }
+    },
+    "Show log" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログを表示"
+          }
+        }
+      }
+    },
+    "Show operation log" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "操作ログを表示"
+          }
+        }
+      }
+    },
+    "Show this project's containers" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このプロジェクトのコンテナを表示"
+          }
+        }
+      }
+    },
+    "Showing the last list that loaded." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最後に取得できた一覧を表示しています。"
+          }
+        }
+      }
+    },
+    "Sidebar" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サイドバー"
+          }
+        }
+      }
+    },
+    "Since last output" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最後の出力から"
+          }
+        }
+      }
+    },
+    "Size" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サイズ"
+          }
+        }
+      }
+    },
+    "Some fields have errors. Check the message under each field." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入力に誤りがあります。各項目のメッセージを確認してください。"
+          }
+        }
+      }
+    },
+    "Stage" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "段階"
+          }
+        }
+      }
+    },
+    "Standard error: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "標準エラー出力: %@"
+          }
+        }
+      }
+    },
+    "Standard output and standard error can't be told apart (TTY)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "標準出力と標準エラー出力を区別できません（TTY）"
+          }
+        }
+      }
+    },
+    "Start" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "起動"
+          }
+        }
+      }
+    },
+    "Start all" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて起動"
+          }
+        }
+      }
+    },
+    "Start the VM to use Docker." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker を使うには VM を起動してください。"
+          }
+        }
+      }
+    },
+    "Started creating the VM." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM の作成を開始しました。"
+          }
+        }
+      }
+    },
+    "Starting" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "起動中"
+          }
+        }
+      }
+    },
+    "Starting VM" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を起動中"
+          }
+        }
+      }
+    },
+    "Stats" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "統計"
+          }
+        }
+      }
+    },
+    "Status" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "状態"
+          }
+        }
+      }
+    },
+    "Status: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "状態: %@"
+          }
+        }
+      }
+    },
+    "Stop" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止"
+          }
+        }
+      }
+    },
+    "Stop all" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて停止"
+          }
+        }
+      }
+    },
+    "Stop finished, but the VM could not be confirmed as stopped" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止は完了しましたが、VM が停止したことを確認できませんでした"
+          }
+        }
+      }
+    },
+    "Stopped" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止中"
+          }
+        }
+      }
+    },
+    "Stopping" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止処理中"
+          }
+        }
+      }
+    },
+    "Stopping VM" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を停止中"
+          }
+        }
+      }
+    },
+    "Subnet" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サブネット"
+          }
+        }
+      }
+    },
+    "Subnet (optional)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サブネット（任意）"
+          }
+        }
+      }
+    },
+    "Subnet error: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サブネットの誤り: %@"
+          }
+        }
+      }
+    },
+    "Tag" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タグ"
+          }
+        }
+      }
+    },
+    "Terminates the Colima process. The VM may be left in an intermediate state." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colima のプロセスを終了する。VM が途中の状態で残る場合がある"
+          }
+        }
+      }
+    },
+    "The VM hasn't been created" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM が未作成です"
+          }
+        }
+      }
+    },
+    "The VM hasn't been created yet." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM はまだ作成されていません。"
+          }
+        }
+      }
+    },
+    "The VM is stopped" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM が停止中です"
+          }
+        }
+      }
+    },
+    "The VM still exists after deletion" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除のあとも VM が残っています"
+          }
+        }
+      }
+    },
+    "The config file differs from the running VM. Restart to apply it." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定ファイルの値が稼働中の VM と異なります。再起動すると反映されます。"
+          }
+        }
+      }
+    },
+    "The container was removed, so log streaming ended" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナが削除されたため、ログの取得を終了しました"
+          }
+        }
+      }
+    },
+    "The disk can't go below its current %lld GiB without recreating the VM." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスクは、VM を作り直さない限り現在の %lld GiB より小さくできません。"
+          }
+        }
+      }
+    },
+    "The operation failed for some containers (%lld succeeded, %lld failed)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The operation failed for some containers (%1$lld succeeded, %2$lld failed)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一部のコンテナで操作に失敗しました（成功 %1$lld 件、失敗 %2$lld 件）"
+          }
+        }
+      }
+    },
+    "The operation was aborted. The VM may be left in an intermediate state." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "操作を中止しました。VM が途中の状態で残る場合があります"
+          }
+        }
+      }
+    },
+    "The target VM type is the same as the current one." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作り直し先の VM タイプが現在と同じです。"
+          }
+        }
+      }
+    },
+    "There are no networks without a running container." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "実行中のコンテナが接続していないネットワークはありません。"
+          }
+        }
+      }
+    },
+    "There are no unused volumes." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使われていないボリュームはありません。"
+          }
+        }
+      }
+    },
+    "There is no recreate to retry" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再試行できる作り直しがありません"
+          }
+        }
+      }
+    },
+    "This container is busy" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このコンテナは操作中です"
+          }
+        }
+      }
+    },
+    "This container is busy, so it can't be deleted now." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このコンテナは操作中のため、削除を受け付けませんでした。"
+          }
+        }
+      }
+    },
+    "This container was removed or isn't in the list." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このコンテナは削除されたか、一覧にありません。"
+          }
+        }
+      }
+    },
+    "Time" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "時刻"
+          }
+        }
+      }
+    },
+    "Unknown" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "状態不明"
+          }
+        }
+      }
+    },
+    "Unlimited" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無制限"
+          }
+        }
+      }
+    },
+    "Unlimited (%lld cores)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無制限（%lld コア）"
+          }
+        }
+      }
+    },
+    "Unused" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未使用"
+          }
+        }
+      }
+    },
+    "Usage" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用状況"
+          }
+        }
+      }
+    },
+    "Used by" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用中のコンテナ"
+          }
+        }
+      }
+    },
+    "VM" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM"
+          }
+        }
+      }
+    },
+    "VM settings" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM 設定"
+          }
+        }
+      }
+    },
+    "VM type" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM タイプ"
+          }
+        }
+      }
+    },
+    "Value" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "値"
+          }
+        }
+      }
+    },
+    "Volumes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボリューム"
+          }
+        }
+      }
+    },
+    "Volumes you create appear here." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボリュームを作成すると、ここに表示されます。"
+          }
+        }
+      }
+    },
+    "Working on the VM" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を操作中"
+          }
+        }
+      }
+    },
+    "You can create a VM with the default settings." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "既定の設定で VM を作成できます。"
+          }
+        }
+      }
+    },
+    "colima exited with code %d" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "colima が終了コード %d で終了しました"
+          }
+        }
+      }
+    },
+    "colima's output appears here when you start, stop or create the VM." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を起動・停止・作成すると、colima の出力がここに表示されます。"
+          }
+        }
+      }
+    },
+    "colima's output is always available from Window › Operation log." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "colima の出力は、いつでも「ウインドウ」メニューの「操作ログ」から表示できます。"
+          }
+        }
+      }
+    },
+    "containerState.created" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Created"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成済み"
+          }
+        }
+      }
+    },
+    "containerState.exited" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stopped"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止"
+          }
+        }
+      }
+    },
+    "containerState.running" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Running"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "実行中"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

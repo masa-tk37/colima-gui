@@ -1,0 +1,934 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ (excluding volumes of unknown size: %lld)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ (excluding volumes of unknown size: %2$lld)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@（サイズ不明 %2$lld 件を除く）"
+          }
+        }
+      }
+    },
+    "A network named “%@” already exists." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%@」という名前のネットワークは既にあります。"
+          }
+        }
+      }
+    },
+    "After disconnecting, the container can no longer communicate with other containers on this network." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切断すると、このネットワーク上の他のコンテナとの通信ができなくなります。"
+          }
+        }
+      }
+    },
+    "Anonymous volumes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "匿名ボリューム"
+          }
+        }
+      }
+    },
+    "Another VM operation is running, so the operation was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "別の VM 操作が実行中のため、操作を実行しませんでした。"
+          }
+        }
+      }
+    },
+    "Another VM operation is running, so the recreation was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "別の VM 操作が実行中のため、作り直しを実行しませんでした。"
+          }
+        }
+      }
+    },
+    "Another VM operation is running, so the restart was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "別の VM 操作が実行中のため、再起動を実行しませんでした。"
+          }
+        }
+      }
+    },
+    "Another VM operation is running, so the stop was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "別の VM 操作が実行中のため、停止を実行しませんでした。"
+          }
+        }
+      }
+    },
+    "Another deletion is in progress, so the deletion was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "別の削除を実行中のため、削除を実行しませんでした。"
+          }
+        }
+      }
+    },
+    "Changing the VM type from %@ to %@ deletes the VM and recreates it. All containers, images, and volumes in the VM are lost and cannot be recovered. Colima settings other than the VM type, such as mounts and networks, return to their defaults." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changing the VM type from %1$@ to %2$@ deletes the VM and recreates it. All containers, images, and volumes in the VM are lost and cannot be recovered. Colima settings other than the VM type, such as mounts and networks, return to their defaults."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM タイプを %1$@ から %2$@ に変更するため、VM を削除して作り直します。VM 内のコンテナ・イメージ・ボリュームはすべて失われ、元に戻せません。マウントやネットワークなど、VM タイプ以外の Colima の設定は既定値に戻ります。"
+          }
+        }
+      }
+    },
+    "Colima was not found." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colima が見つかりません。"
+          }
+        }
+      }
+    },
+    "Could not check the VM state." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM の状態を確認できません。"
+          }
+        }
+      }
+    },
+    "Could not check the VM state: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM の状態を確認できません: %@"
+          }
+        }
+      }
+    },
+    "Could not check the VM type." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM タイプを確認できません。"
+          }
+        }
+      }
+    },
+    "Could not check the executables." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "実行ファイルを確認できませんでした。"
+          }
+        }
+      }
+    },
+    "Could not connect to the Docker engine." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker エンジンに接続できません。"
+          }
+        }
+      }
+    },
+    "Could not connect to the Docker engine. Check the VM state and try again." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker エンジンに接続できません。VM の状態を確認して、もう一度試してください。"
+          }
+        }
+      }
+    },
+    "Could not connect to the Docker engine. The VM is running. Restart the VM." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker エンジンに接続できません。VM は稼働中です。VM を再起動してください。"
+          }
+        }
+      }
+    },
+    "Could not connect to the Docker engine. The VM is stopped. Start the VM." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker エンジンに接続できません。VM が停止しています。VM を起動してください。"
+          }
+        }
+      }
+    },
+    "Could not interpret the Docker engine's response." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker エンジンの応答を解釈できませんでした。"
+          }
+        }
+      }
+    },
+    "Could not interpret the log format." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログの形式を解釈できませんでした。"
+          }
+        }
+      }
+    },
+    "Could not read %@: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not read %1$@: %2$@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ を読めません: %2$@"
+          }
+        }
+      }
+    },
+    "Could not read the VM type. %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM タイプを読めません。%@"
+          }
+        }
+      }
+    },
+    "Could not read the settings file, so defaults are shown. %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定ファイルを読めなかったため、既定値を表示しています。%@"
+          }
+        }
+      }
+    },
+    "Could not start creating the VM." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM の作成を開始できませんでした。"
+          }
+        }
+      }
+    },
+    "Could not start recreating the VM." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作り直しを開始できませんでした。"
+          }
+        }
+      }
+    },
+    "Could not write to %@: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not write to %1$@: %2$@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ に書き込めません: %2$@"
+          }
+        }
+      }
+    },
+    "Data in the volume is lost and cannot be recovered. A volume in use by a container cannot be deleted." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボリューム内のデータは失われ、元に戻せません。コンテナが使用中のボリュームは削除できません。"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
+          }
+        }
+      }
+    },
+    "Delete %lld unused networks?" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Delete %lld unused network?"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Delete %lld unused networks?"
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未使用のネットワーク %lld 件を削除しますか？"
+          }
+        }
+      }
+    },
+    "Delete %lld unused volumes?" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Delete %lld unused volume?"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Delete %lld unused volumes?"
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未使用のボリューム %lld 件を削除しますか？"
+          }
+        }
+      }
+    },
+    "Delete and recreate" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除して作り直す"
+          }
+        }
+      }
+    },
+    "Delete and recreate the VM?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を削除して作り直しますか？"
+          }
+        }
+      }
+    },
+    "Delete the container “%@”?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナ「%@」を削除しますか？"
+          }
+        }
+      }
+    },
+    "Delete the image “%@”?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "イメージ「%@」を削除しますか？"
+          }
+        }
+      }
+    },
+    "Delete the network “%@”?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワーク「%@」を削除しますか？"
+          }
+        }
+      }
+    },
+    "Delete the volume “%@”?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボリューム「%@」を削除しますか？"
+          }
+        }
+      }
+    },
+    "Deleting a container discards changes made to files inside it and cannot be undone. Volumes are not deleted." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナを削除すると、コンテナ内のファイルへの変更は失われ、元に戻せません。ボリュームは削除されません。"
+          }
+        }
+      }
+    },
+    "Disconnect" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切断"
+          }
+        }
+      }
+    },
+    "Disconnect the container “%@” from the network “%@”?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disconnect the container “%1$@” from the network “%2$@”?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナ「%1$@」をネットワーク「%2$@」から切断しますか？"
+          }
+        }
+      }
+    },
+    "Docker is unavailable, so the deletion was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker が利用できない状態のため、削除を実行しませんでした。"
+          }
+        }
+      }
+    },
+    "Docker is unavailable, so the disconnection was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker が利用できない状態のため、切断を実行しませんでした。"
+          }
+        }
+      }
+    },
+    "Enter a network name." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワーク名を入力してください。"
+          }
+        }
+      }
+    },
+    "Enter a number of 1 or more (GiB) for memory." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メモリは 1 以上の数値（GiB）で入力してください。"
+          }
+        }
+      }
+    },
+    "Enter a whole number of 1 or more (GiB) for the disk." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスクは 1 以上の整数（GiB）で入力してください。"
+          }
+        }
+      }
+    },
+    "Enter a whole number of 1 or more for CPU." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CPU は 1 以上の整数で入力してください。"
+          }
+        }
+      }
+    },
+    "Enter the subnet as 172.28.0.0/16 (IPv4, prefix length 0-32) or fd00::/64 (IPv6, 0-128)." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サブネットは 172.28.0.0/16（IPv4、プレフィックス長 0〜32）か fd00::/64（IPv6、0〜128）の形式で入力してください。"
+          }
+        }
+      }
+    },
+    "Named volumes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前付きボリューム"
+          }
+        }
+      }
+    },
+    "Named volumes are deleted too. (`docker volume prune` deletes only anonymous volumes by default, but this app includes named volumes.) Data in the volumes is lost and cannot be recovered. The estimated recoverable space is %@." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前付きボリュームも削除します（docker volume prune は既定では匿名ボリュームだけを削除しますが、このアプリは名前付きも対象にします）。ボリューム内のデータは失われ、元に戻せません。回復できる容量の推定は %@ です。"
+          }
+        }
+      }
+    },
+    "Networks that no running container is connected to are deleted. Networks referenced only by stopped containers are deleted too, and those containers may fail to start next time." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "実行中のコンテナが接続していないネットワークを削除します。停止中のコンテナだけが参照するネットワークも削除され、そのコンテナは次の起動に失敗することがあります。"
+          }
+        }
+      }
+    },
+    "Not observed yet" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まだ観測していません"
+          }
+        }
+      }
+    },
+    "Restart" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再起動"
+          }
+        }
+      }
+    },
+    "Restart the VM?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を再起動しますか？"
+          }
+        }
+      }
+    },
+    "Statistics are not being collected because the container is not running." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナが実行中ではないため、統計を取得していません。"
+          }
+        }
+      }
+    },
+    "Stop" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "停止"
+          }
+        }
+      }
+    },
+    "Stop the VM?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を停止しますか？"
+          }
+        }
+      }
+    },
+    "Stopping the VM also stops all running containers." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を停止すると、稼働中のコンテナもすべて停止します。"
+          }
+        }
+      }
+    },
+    "The Docker engine did not respond." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker エンジンから応答がありませんでした。"
+          }
+        }
+      }
+    },
+    "The VM is stopped and then started again. All running containers are stopped first." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を停止してから起動し直します。稼働中のコンテナはいったんすべて停止します。"
+          }
+        }
+      }
+    },
+    "The VM type state file was not found." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM タイプの状態ファイルが見つかりません。"
+          }
+        }
+      }
+    },
+    "The connection was lost. Check the list to see whether the operation completed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続が途中で切れました。操作が完了したかどうかは一覧で確認してください。"
+          }
+        }
+      }
+    },
+    "The container was not deleted because it is running. Stop it first." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナが実行中のため削除しませんでした。先に停止してください。"
+          }
+        }
+      }
+    },
+    "The disk cannot be smaller than the current %lld GiB. To shrink it, recreate the VM." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスクは現在の %lld GiB より小さくできません。縮小するには VM を作り直してください。"
+          }
+        }
+      }
+    },
+    "The format of %@ in the settings file is not as expected: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The format of %1$@ in the settings file is not as expected: %2$@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定ファイルの %1$@ の書式が想定と異なります: %2$@"
+          }
+        }
+      }
+    },
+    "The image itself is deleted and this cannot be undone. An image in use by a container cannot be deleted." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "イメージ本体を削除します。元に戻せません。コンテナが使用中のイメージは削除できません。"
+          }
+        }
+      }
+    },
+    "The network is deleted. A network with connected containers cannot be deleted." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワークを削除します。コンテナが接続しているネットワークは削除できません。"
+          }
+        }
+      }
+    },
+    "The operation was interrupted." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "操作が中断されました。"
+          }
+        }
+      }
+    },
+    "The settings file has %lld `%@:` lines at the start of a line." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The settings file has %1$lld `%2$@:` lines at the start of a line."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定ファイルの行頭に `%2$@:` の行が %1$lld 行あります。"
+          }
+        }
+      }
+    },
+    "The settings file has no `%@:` line at the start of a line." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定ファイルの行頭に `%@:` の行がありません。"
+          }
+        }
+      }
+    },
+    "There is no plain value on the same line as `%@:`." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "`%@:` と同じ行に単純な値がありません。"
+          }
+        }
+      }
+    },
+    "This container is busy with another operation, so the action was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このコンテナは操作中のため、実行しませんでした。"
+          }
+        }
+      }
+    },
+    "This container is running another operation, so the deletion was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このコンテナは別の操作を実行中のため、削除を実行しませんでした。"
+          }
+        }
+      }
+    },
+    "This container is running another operation, so the disconnection was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このコンテナは別の操作を実行中のため、切断を実行しませんでした。"
+          }
+        }
+      }
+    },
+    "This network is already being deleted, so the deletion was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このネットワークは削除中のため、削除を実行しませんでした。"
+          }
+        }
+      }
+    },
+    "This tag is deleted. If no other tags remain, the image itself is deleted too and this cannot be undone. An image in use by a container cannot be deleted." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このタグを削除します。ほかのタグがなければイメージ本体も削除され、元に戻せません。コンテナが使用中のイメージは削除できません。"
+          }
+        }
+      }
+    },
+    "Updates stopped because the container stopped." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテナが停止したため、更新を止めました。"
+          }
+        }
+      }
+    },
+    "Usage is unavailable because the VM has not been created." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM が作成されていないため、使用状況を取得できません。"
+          }
+        }
+      }
+    },
+    "Usage is unavailable because the VM is busy with an operation." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM を操作中のため、使用状況を取得できません。"
+          }
+        }
+      }
+    },
+    "Usage is unavailable because the VM is stopped." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VM が停止しているため、使用状況を取得できません。"
+          }
+        }
+      }
+    },
+    "colima list did not finish in time" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "colima list が時間内に終わりませんでした"
+          }
+        }
+      }
+    },
+    "colima list failed with exit code %d" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "colima list が終了コード %d で失敗しました"
+          }
+        }
+      }
+    },
+    "colima list was cancelled" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "colima list が取り消されました"
+          }
+        }
+      }
+    },
+    "colima output ended unexpectedly" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "colima の出力が途中で終わりました"
+          }
+        }
+      }
+    },
+    "colima was not found" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "colima が見つかりません"
+          }
+        }
+      }
+    },
+    "colima was not found." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "colima が見つかりません。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

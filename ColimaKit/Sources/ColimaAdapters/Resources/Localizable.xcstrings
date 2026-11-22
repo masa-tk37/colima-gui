@@ -1,0 +1,162 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Another colima command is still running in the background. Wait for it to finish, then retry." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "別の colima コマンドがバックグラウンドで実行中です。終わるのを待ってから再試行してください。"
+          }
+        }
+      }
+    },
+    "The ColimaGUI background helper could not be registered. Reinstall ColimaGUI, then retry." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ColimaGUI のバックグラウンドヘルパーを登録できませんでした。ColimaGUI を入れ直してから再試行してください。"
+          }
+        }
+      }
+    },
+    "The ColimaGUI background helper is turned off. Turn on ColimaGUI in System Settings > General > Login Items & Extensions, then retry." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ColimaGUI のバックグラウンドヘルパーがオフになっています。システム設定 > 一般 > ログイン項目と機能拡張 で ColimaGUI をオンにしてから再試行してください。"
+          }
+        }
+      }
+    },
+    "The background helper belongs to a different version of ColimaGUI. Quit and reopen ColimaGUI, then retry." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バックグラウンドヘルパーが別のバージョンの ColimaGUI のものです。ColimaGUI を終了して開き直してから再試行してください。"
+          }
+        }
+      }
+    },
+    "The background helper did not confirm the command in time. It may or may not have run; check the VM status before retrying." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バックグラウンドヘルパーから期限内に応答がありませんでした。コマンドが実行されたかどうかは分かりません。VM の状態を確かめてから再試行してください。"
+          }
+        }
+      }
+    },
+    "The background helper is being updated. Retry in a moment." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バックグラウンドヘルパーを更新しています。少し待ってから再試行してください。"
+          }
+        }
+      }
+    },
+    "The background helper rejected the command." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バックグラウンドヘルパーがコマンドを受け付けませんでした。"
+          }
+        }
+      }
+    },
+    "The background helper stopped. The VM may still be changing state; check its status before retrying." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バックグラウンドヘルパーが停止しました。VM の状態が変わっている途中の可能性があります。状態を確かめてから再試行してください。"
+          }
+        }
+      }
+    },
+    "The file is not valid UTF-8." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UTF-8 として読めません。"
+          }
+        }
+      }
+    },
+    "The settings file has %lld `%@:` lines at the start of a line." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The settings file has %1$lld `%2$@:` lines at the start of a line."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定ファイルの行頭に `%2$@:` の行が %1$lld 行あります。"
+          }
+        }
+      }
+    },
+    "The settings file has no `%@:` line at the start of a line." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定ファイルの行頭に `%@:` の行がありません。"
+          }
+        }
+      }
+    },
+    "The value `%@` of `cpu:` is not an integer." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "`cpu:` の値 `%@` が整数ではありません。"
+          }
+        }
+      }
+    },
+    "The value `%@` of `disk:` is not an integer." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "`disk:` の値 `%@` が整数ではありません。"
+          }
+        }
+      }
+    },
+    "The value `%@` of `memory:` is not a number." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "`memory:` の値 `%@` が数値ではありません。"
+          }
+        }
+      }
+    },
+    "There is no value on the same line as `%@:`." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "`%@:` と同じ行に値がありません。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
