@@ -34,17 +34,17 @@
         }
       let base = await VMControllerPreviews.make(controllerScenario)
       let monitor = VMUsageMonitor(controller: base.controller, cli: base.cli)
-      let capacity = 200
+      let window = monitor.cpu.window
       switch scenario {
       case .runningWithGaps:
         monitor.seedForPreview(
-          cpu: PreviewSeriesData.cpu(capacity: capacity, count: 60, gaps: [12, 13, 40]),
-          memory: PreviewSeriesData.memory(capacity: capacity, count: 60, gaps: [12, 13, 40]),
+          cpu: PreviewSeriesData.cpu(window: window, count: 60, gaps: [12, 13, 40]),
+          memory: PreviewSeriesData.memory(window: window, count: 60, gaps: [12, 13, 40]),
           previous: try? await base.cli.sampleUsage())
       case .runningWithoutGaps:
         monitor.seedForPreview(
-          cpu: PreviewSeriesData.cpu(capacity: capacity, count: 60, gaps: []),
-          memory: PreviewSeriesData.memory(capacity: capacity, count: 60, gaps: []),
+          cpu: PreviewSeriesData.cpu(window: window, count: 60, gaps: []),
+          memory: PreviewSeriesData.memory(window: window, count: 60, gaps: []),
           previous: try? await base.cli.sampleUsage())
       default:
         break

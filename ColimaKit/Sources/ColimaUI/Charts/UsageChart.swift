@@ -51,6 +51,7 @@ public struct UsageChart: View {
         }
       }
       .chartYScale(domain: 0...upper)
+      .chartXScale(domain: timeDomain)
       .chartXAxis {
         AxisMarks(values: .automatic(desiredCount: 4)) {
           AxisGridLine()
@@ -79,6 +80,13 @@ public struct UsageChart: View {
       .accessibilityLabel(title)
       .accessibilityValue(summary(gapCount: shape.gaps.count, maximum: maximum))
     }
+  }
+
+  /// A fixed-width axis ending at the newest point, so a short history grows from the right edge
+  /// instead of stretching across the chart.
+  private var timeDomain: ClosedRange<Date> {
+    let end = series.points.last?.time ?? Date()
+    return end.addingTimeInterval(-series.window)...end
   }
 
   private var latestText: String {

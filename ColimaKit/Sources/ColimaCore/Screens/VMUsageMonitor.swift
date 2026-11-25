@@ -9,14 +9,13 @@ public enum VMUsageState: Sendable, Equatable {
 @MainActor @Observable
 public final class VMUsageMonitor {
   static let pollInterval: Duration = .seconds(3)
-  /// Ten minutes at `pollInterval`.
-  static let capacity = 200
+  static let window: TimeInterval = 600
   /// A base older than this spans time the screen was closed, so its difference would be an average over the
   /// pause plotted at the reopening. Three periods leave room for the varying latency of `colima ssh`.
   static let baseMaxAge: TimeInterval = 9
 
-  public private(set) var cpu = UsageSeries(capacity: VMUsageMonitor.capacity)
-  public private(set) var memory = UsageSeries(capacity: VMUsageMonitor.capacity)
+  public private(set) var cpu = UsageSeries(window: VMUsageMonitor.window)
+  public private(set) var memory = UsageSeries(window: VMUsageMonitor.window)
 
   @ObservationIgnored private let controller: VMController
   @ObservationIgnored private let cli: any ColimaCLI
@@ -86,7 +85,7 @@ public final class VMUsageMonitor {
 
     let time = now()
     let base = previous.flatMap {
-      time.timeIntervalSince($0.takenAt) <= Self.baseMaxAge ? $0.snapshot : nil
+      (0...Self.baseMaxAge).contains(time.timeIntervalSince($0.takenAt)) ? $0.snapshot : nil
     }
     previous = (snapshot, time)
     guard let cpuPercent = snapshot.cpuPercent(since: base) else {

@@ -21,13 +21,12 @@ public enum StatsSessionState: Sendable, Equatable {
 @MainActor @Observable
 public final class StatsSession {
   static let pollInterval: Duration = .seconds(3)
-  /// Five minutes at `pollInterval`.
-  static let capacity = 100
+  static let window: TimeInterval = 300
 
   public private(set) var state: StatsSessionState = .starting
   /// CPU usage with one fully used core as 100.
-  public private(set) var cpu = UsageSeries(capacity: StatsSession.capacity)
-  public private(set) var memory = UsageSeries(capacity: StatsSession.capacity)
+  public private(set) var cpu = UsageSeries(window: StatsSession.window)
+  public private(set) var memory = UsageSeries(window: StatsSession.window)
 
   @ObservationIgnored private let engine: any DockerEngine
   @ObservationIgnored private let container: ContainerID

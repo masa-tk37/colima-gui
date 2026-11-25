@@ -83,8 +83,8 @@ struct StatsSessionTests {
   @Test func keepsFiveMinutesOfHistoryAtThreeSecondIntervals() {
     let harness = Harness()
     #expect(StatsSession.pollInterval == .seconds(3))
-    #expect(harness.session.cpu.capacity == 100)
-    #expect(harness.session.memory.capacity == 100)
+    #expect(harness.session.cpu.window == 300)
+    #expect(harness.session.memory.window == 300)
   }
 
   @Test func theSessionStartsBeforeAnythingIsKnown() {

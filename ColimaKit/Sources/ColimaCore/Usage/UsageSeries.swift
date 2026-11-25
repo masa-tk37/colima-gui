@@ -11,12 +11,12 @@ public struct UsagePoint: Sendable, Equatable {
 }
 
 public struct UsageSeries: Sendable, Equatable {
-  public let capacity: Int
+  public let window: TimeInterval
   public private(set) var points: [UsagePoint] = []
 
-  public init(capacity: Int) {
-    precondition(capacity > 0, "UsageSeries capacity must be positive")
-    self.capacity = capacity
+  public init(window: TimeInterval) {
+    precondition(window > 0, "UsageSeries window must be positive")
+    self.window = window
   }
 
   public mutating func appendGap(at time: Date) {
@@ -24,9 +24,12 @@ public struct UsageSeries: Sendable, Equatable {
   }
 
   public mutating func append(_ value: Double?, at time: Date) {
-    points.append(UsagePoint(time: time, value: value))
-    if points.count > capacity {
-      points.removeFirst(points.count - capacity)
+    // After a clock is set back, earlier points would lie past the chart's axis, which ends at the newest point.
+    if let last = points.last, time < last.time {
+      points.removeAll()
     }
+    let oldest = time.addingTimeInterval(-window)
+    points.removeAll { $0.time < oldest }
+    points.append(UsagePoint(time: time, value: value))
   }
 }

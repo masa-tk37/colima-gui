@@ -72,8 +72,8 @@ struct VMUsageMonitorTests {
   @Test func keepsTenMinutesOfHistoryAtThreeSecondIntervals() {
     let harness = Harness(samples: [])
     #expect(VMUsageMonitor.pollInterval == .seconds(3))
-    #expect(harness.monitor.cpu.capacity == 200)
-    #expect(harness.monitor.memory.capacity == 200)
+    #expect(harness.monitor.cpu.window == 600)
+    #expect(harness.monitor.memory.window == 600)
   }
 
   @Test func aStoppedVMIsNeverSampledAndTheReasonIsShown() async {
@@ -291,7 +291,7 @@ struct VMUsageMonitorTests {
     first.cancel()
     await first.value
 
-    harness.date.advance(by: 600)
+    harness.date.advance(by: 60)
     let reopenedAt = harness.date.now
     let second = harness.start()
     await harness.waitForRounds(3)
@@ -305,6 +305,57 @@ struct VMUsageMonitorTests {
       harness.monitor.memory.points.map(\.value) == [
         nil, Double(512 << 20), nil, Double(512 << 20),
       ])
+  }
+
+  @Test func reopeningAfterTheWholeWindowKeepsOnlyTheEdgePointUntilTheNextSample() async {
+    let harness = Harness(samples: [
+      .success(snapshot(busy: 100, idle: 100)),
+      .success(snapshot(busy: 200, idle: 200)),
+      .success(snapshot(busy: 6000, idle: 60_000)),
+      .success(snapshot(busy: 6030, idle: 60_090)),
+    ])
+    await harness.observe()
+    let first = harness.start()
+    await harness.waitForRounds(1)
+    await harness.tick(to: 3, completingRound: 2)
+    first.cancel()
+    await first.value
+
+    harness.date.advance(by: 600)
+    let second = harness.start()
+    await harness.waitForRounds(3)
+    #expect(harness.monitor.cpu.points.map(\.value) == [50, nil])
+
+    await harness.tick(to: 6, completingRound: 4)
+    second.cancel()
+    await second.value
+
+    #expect(harness.monitor.cpu.points.map(\.value) == [nil, 25])
+    #expect(harness.monitor.memory.points.map(\.value) == [nil, Double(512 << 20)])
+  }
+
+  @Test func aClockSetBackStartsOverWithAGapInsteadOfADifferenceFromTheFuture() async {
+    let harness = Harness(samples: [
+      .success(snapshot(busy: 100, idle: 100)),
+      .success(snapshot(busy: 200, idle: 200)),
+      .success(snapshot(busy: 230, idle: 290)),
+    ])
+    await harness.observe()
+    let first = harness.start()
+    await harness.waitForRounds(1)
+    await harness.tick(to: 3, completingRound: 2)
+    first.cancel()
+    await first.value
+
+    harness.date.advance(by: -60)
+    let setBackAt = harness.date.now
+    let second = harness.start()
+    await harness.waitForRounds(3)
+    second.cancel()
+    await second.value
+
+    #expect(harness.monitor.cpu.points == [UsagePoint(time: setBackAt, value: nil)])
+    #expect(harness.monitor.memory.points == [UsagePoint(time: setBackAt, value: nil)])
   }
 
   @Test func reopeningWithinTheCutoffContinuesTheLine() async {

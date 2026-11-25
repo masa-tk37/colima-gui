@@ -24,27 +24,27 @@
         scenario == .notRunning ? PreviewSampleData.adminer : PreviewSampleData.webshopWeb
       let session = ContainerSessionFactory(engine: backend.engine).makeStatsSession(
         for: container.id)
-      let capacity = 100
+      let window = session.cpu.window
       switch scenario {
       case .running:
         session.seedForPreview(
           state: .running,
-          cpu: PreviewSeriesData.cpu(capacity: capacity, count: 40, gaps: [0]),
-          memory: PreviewSeriesData.memory(capacity: capacity, count: 40, gaps: []))
+          cpu: PreviewSeriesData.cpu(window: window, count: 40, gaps: [0]),
+          memory: PreviewSeriesData.memory(window: window, count: 40, gaps: []))
       case .runningWithGaps:
         session.seedForPreview(
           state: .running,
-          cpu: PreviewSeriesData.cpu(capacity: capacity, count: 40, gaps: [0, 15, 16, 30]),
-          memory: PreviewSeriesData.memory(capacity: capacity, count: 40, gaps: [15, 16]))
+          cpu: PreviewSeriesData.cpu(window: window, count: 40, gaps: [0, 15, 16, 30]),
+          memory: PreviewSeriesData.memory(window: window, count: 40, gaps: [15, 16]))
       case .notRunning:
         session.seedForPreview(
           state: .notRunning,
-          cpu: UsageSeries(capacity: capacity), memory: UsageSeries(capacity: capacity))
+          cpu: UsageSeries(window: window), memory: UsageSeries(window: window))
       case .containerStopped:
         session.seedForPreview(
           state: .containerStopped,
-          cpu: PreviewSeriesData.cpu(capacity: capacity, count: 40, gaps: [0]),
-          memory: PreviewSeriesData.memory(capacity: capacity, count: 40, gaps: []))
+          cpu: PreviewSeriesData.cpu(window: window, count: 40, gaps: [0]),
+          memory: PreviewSeriesData.memory(window: window, count: 40, gaps: []))
       }
       return StatsSessionScene(session: session, container: container)
     }
