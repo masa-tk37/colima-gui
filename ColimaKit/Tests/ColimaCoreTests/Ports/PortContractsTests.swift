@@ -139,9 +139,10 @@ private struct StubFileStore: ColimaFileStore {
   #expect((try? store.readProfileSettings()) == .some(nil))
 }
 
-@Test func logLoggersExistForTheThreeCategories() {
+@Test func logLoggersExistForEveryCategory() {
   ColimaLog.vm.debug("vm")
   ColimaLog.docker.debug("docker")
   ColimaLog.process.debug("process")
+  ColimaLog.machine.debug("machine")
   #expect(ColimaLog.subsystem == "cc.tk37.ColimaGUI")
 }

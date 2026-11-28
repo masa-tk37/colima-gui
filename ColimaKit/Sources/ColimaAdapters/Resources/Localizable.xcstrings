@@ -1,12 +1,48 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ exited with code %d." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ exited with code %2$d."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ が終了コード %2$d で終了しました。"
+          }
+        }
+      }
+    },
     "Another colima command is still running in the background. Wait for it to finish, then retry." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "別の colima コマンドがバックグラウンドで実行中です。終わるのを待ってから再試行してください。"
+          }
+        }
+      }
+    },
+    "Another operation is still running on this machine in the background. Wait for it to finish, then retry." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このマシンでは別の操作がバックグラウンドで実行中です。終わってから再試行してください。"
+          }
+        }
+      }
+    },
+    "Opening the shell was cancelled." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シェルを開く操作はキャンセルされました。"
           }
         }
       }
@@ -153,6 +189,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "`%@:` と同じ行に値がありません。"
+          }
+        }
+      }
+    },
+    "limactl did not respond in time." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "limactl が時間内に応答しませんでした。"
+          }
+        }
+      }
+    },
+    "limactl was not found at %@." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ に limactl が見つかりません。"
           }
         }
       }

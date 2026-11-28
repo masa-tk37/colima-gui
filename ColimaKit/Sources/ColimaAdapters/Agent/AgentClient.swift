@@ -6,13 +6,13 @@ import Synchronization
 
 /// Every run ends with exactly one terminal event, whichever arrives first:
 /// the agent's own `exited`/`launchFailed`, a rejected `start`, a lost connection, or no answer to `start` in time.
-public final class AgentClient: VMCommandLauncher, Sendable {
+public final class AgentClient: VMCommandLauncher, MachineCommandLauncher, Sendable {
   private struct PendingRun {
     let continuation: AsyncStream<ProcessEvent>.Continuation
     let generation: Int
     var accepted = false
 
-      var lostEvent: ProcessEvent {
+    var lostEvent: ProcessEvent {
       .launchFailed(reason: accepted ? AgentMessages.helperStopped : AgentMessages.resultUnknown)
     }
   }
@@ -44,6 +44,40 @@ public final class AgentClient: VMCommandLauncher, Sendable {
   }
 
   package func run(_ command: VMCommand) async -> VMCommandRun {
+    await send(.colima(command))
+  }
+
+  package func run(_ command: MachineCommand) async -> VMCommandRun {
+    await send(.machine(command))
+  }
+
+  /// An older agent would drop the connection and fail every run on it, so one that does not speak this protocol version is not asked.
+  package func activeRuns() async -> [AgentRunSummary]? {
+    guard let connection = await currentVersionConnection() else { return nil }
+    let data = await call(connection, onError: nil as Data?) { proxy, reply in
+      proxy.activeRuns { reply($0) }
+    }
+    return data.flatMap { try? JSONDecoder().decode([AgentRunSummary].self, from: $0) }
+  }
+
+  /// Absent from `state.runs`, so the agent finds the run by `runID`.
+  package func terminateEarlierRun(runID: UUID) async -> Bool {
+    guard let connection = await currentVersionConnection() else { return false }
+    return await call(connection, onError: false) { proxy, reply in
+      proxy.terminate(runID: runID) { reply($0) }
+    }
+  }
+
+  private func currentVersionConnection() async -> NSXPCConnection? {
+    guard AgentMessages.refusal(for: registration()) == nil else { return nil }
+    let connection = currentLink().connection
+    let version = await call(connection, onError: nil) { proxy, reply in
+      proxy.hello { reply($0) }
+    }
+    return version == AgentXPC.protocolVersion ? connection : nil
+  }
+
+  private func send(_ agentCommand: AgentCommand) async -> VMCommandRun {
     let runID = UUID()
     let (events, continuation) = AsyncStream.makeStream(of: ProcessEvent.self)
     // The run keeps the client alive: callbacks reach it only through weak references held by the connection.
@@ -55,7 +89,7 @@ public final class AgentClient: VMCommandLauncher, Sendable {
       return run
     }
     if let refusal = AgentMessages.refusal(for: registration()) { return fail(refusal) }
-    guard let payload = try? JSONEncoder().encode(command) else {
+    guard let payload = try? JSONEncoder().encode(agentCommand) else {
       return fail(AgentMessages.rejected(.undecodableCommand))
     }
 
@@ -73,8 +107,10 @@ public final class AgentClient: VMCommandLauncher, Sendable {
       link.connection.remoteObjectProxyWithErrorHandler { [weak self] _ in
         self?.finish(runID) { $0.lostEvent }
       } as? any ColimaAgentProtocol
+    let target = agentCommand.target
     proxy?.start(runID: runID, command: payload) { [weak self] raw in
-      self?.startReplied(runID, reply: AgentStartReply(rawValue: raw) ?? .undecodableCommand)
+      self?.startReplied(
+        runID, reply: AgentStartReply(rawValue: raw) ?? .undecodableCommand, target: target)
     }
     Task {
       try? await Task.sleep(for: acceptTimeout)
@@ -173,9 +209,9 @@ public final class AgentClient: VMCommandLauncher, Sendable {
     }
   }
 
-  private func startReplied(_ runID: UUID, reply: AgentStartReply) {
+  private func startReplied(_ runID: UUID, reply: AgentStartReply, target: AgentTarget) {
     guard reply == .accepted else {
-      finish(runID, with: .launchFailed(reason: AgentMessages.rejected(reply)))
+      finish(runID, with: .launchFailed(reason: AgentMessages.rejected(reply, for: target)))
       return
     }
     state.withLock { $0.runs[runID]?.accepted = true }

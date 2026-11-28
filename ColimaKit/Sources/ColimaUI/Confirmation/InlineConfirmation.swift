@@ -17,7 +17,7 @@ struct InlineConfirmation: View {
         HStack {
           Spacer(minLength: 0)
           Button(LocalizedStringResource("Cancel", bundle: #bundle), role: .cancel, action: cancel)
-          Button(request.confirmLabel, role: .destructive, action: approve)
+          Button(request.confirmLabel, role: request.confirmRole.buttonRole, action: approve)
         }
       }
     } label: {

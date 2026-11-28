@@ -5,9 +5,10 @@ import Foundation
 public enum AgentMain {
   public static func run() -> Never {
     let service = AgentService(
-      launcher: LocalVMCommandLauncher(),
+      vmLauncher: LocalVMCommandLauncher(),
+      machineLauncher: LocalMachineCommandLauncher(),
       peerRequirement: appPeerRequirement,
-      foreignCommandIsRunning: colimaCommandIsRunning
+      foreignCommandIsRunning: foreignCommandIsRunning(for:)
     )
     let listener = NSXPCListener(machServiceName: AgentXPC.serviceName)
     listener.delegate = service
@@ -39,17 +40,24 @@ public enum AgentMain {
     return app.pathExtension == "app" ? app : nil
   }
 
+  @Sendable static func foreignCommandIsRunning(for target: AgentTarget) async -> Bool {
+    switch target {
+    case .colima: await colimaCommandIsRunning()
+    case .machine(let key): await machineCommandIsRunning(key)
+    }
+  }
+
+  static func limactlPattern(instanceName: String) -> String {
+    ForeignCommandCheck.limactlPattern(instanceName: instanceName)
+  }
+
+  /// `ignoringCase` because instance names are case-insensitive on disk.
+  @Sendable package static func machineCommandIsRunning(_ key: MachineKey) async -> Bool {
+    await ForeignCommandCheck.isRunning(
+      matching: limactlPattern(instanceName: MachineName.instancePrefix + key.rawValue), ignoringCase: true)
+  }
+
   @Sendable package static func colimaCommandIsRunning() async -> Bool {
-    let pgrep = ProcessInvocation(
-      executable: "/usr/bin/pgrep",
-      // `-U`: another user's colima drives that user's own VM, not this one.
-      arguments: ["-U", String(getuid()), "-f", "(^|/)colima (start|stop|delete)( |$)"],
-      environment: ChildEnvironment.current(),
-      workingDirectory: "/",
-      timeout: .seconds(5)
-    )
-    // pgrep exits 1 when nothing matches; any other outcome (a match, an error, a timeout) is treated as running.
-    let result = await ProcessRunner().runCollecting(pgrep)
-    return result.termination != .exited(code: 1)
+    await ForeignCommandCheck.isRunning(matching: "(^|/)colima (start|stop|delete)( |$)")
   }
 }

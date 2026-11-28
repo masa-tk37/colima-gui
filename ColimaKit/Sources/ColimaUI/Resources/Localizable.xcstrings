@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ was not found on this Mac." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この Mac に %@ が見つかりません。"
+          }
+        }
+      }
+    },
     "%@: %@" : {
       "localizations" : {
         "en" : {
@@ -367,6 +377,16 @@
         }
       }
     },
+    "A machine with this name is already being created." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この名前のマシンは既に作成中です。"
+          }
+        }
+      }
+    },
     "A running container can't be deleted. Stop it first." : {
       "localizations" : {
         "ja" : {
@@ -377,12 +397,32 @@
         }
       }
     },
+    "A running machine, or one with an operation in progress, cannot be edited. Stop it and wait for the operation to finish, then edit it." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "稼働中のマシンや操作中のマシンは編集できません。停止して操作が終わってから編集してください。"
+          }
+        }
+      }
+    },
     "Abort" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "中止"
+          }
+        }
+      }
+    },
+    "Add folder…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォルダを追加…"
           }
         }
       }
@@ -417,6 +457,16 @@
         }
       }
     },
+    "An operation started in an earlier session is running" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "以前のセッションで始めた操作が実行中です"
+          }
+        }
+      }
+    },
     "Anonymous" : {
       "localizations" : {
         "ja" : {
@@ -443,6 +493,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ほかの操作を実行中です"
+          }
+        }
+      }
+    },
+    "Application" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリケーション"
           }
         }
       }
@@ -669,12 +729,62 @@
         }
       }
     },
+    "Cancel creation" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成を中止"
+          }
+        }
+      }
+    },
+    "Cancelled" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中止"
+          }
+        }
+      }
+    },
+    "Cancelled creating “%@”." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%@」の作成を中止しました。"
+          }
+        }
+      }
+    },
+    "Cancelling" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中止しています"
+          }
+        }
+      }
+    },
     "Cause" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "原因"
+          }
+        }
+      }
+    },
+    "Changes take effect the next time the machine starts." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "変更は、次にマシンを起動したときに反映されます。"
           }
         }
       }
@@ -945,6 +1055,16 @@
         }
       }
     },
+    "Couldn't create the machine" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンの作成に失敗しました"
+          }
+        }
+      }
+    },
     "Couldn't create the network because Docker is unavailable." : {
       "localizations" : {
         "ja" : {
@@ -971,6 +1091,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "削除に失敗しました: %@"
+          }
+        }
+      }
+    },
+    "Couldn't delete the machine" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンの削除に失敗しました"
           }
         }
       }
@@ -1041,12 +1171,52 @@
         }
       }
     },
+    "Couldn't load the distributions" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディストリビューションを取得できません"
+          }
+        }
+      }
+    },
     "Couldn't load the items to delete: %@" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "削除対象を取得できませんでした: %@"
+          }
+        }
+      }
+    },
+    "Couldn't open a shell in “%@”" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%@」でシェルを開けませんでした"
+          }
+        }
+      }
+    },
+    "Couldn't read the machines" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンの一覧を取得できません"
+          }
+        }
+      }
+    },
+    "Couldn't read this machine" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このマシンを取得できません"
           }
         }
       }
@@ -1091,6 +1261,16 @@
         }
       }
     },
+    "Couldn't save the changes to the machine" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンの変更の保存に失敗しました"
+          }
+        }
+      }
+    },
     "Couldn't start connecting. Docker is unavailable, or this container is busy with another operation." : {
       "localizations" : {
         "ja" : {
@@ -1121,6 +1301,16 @@
         }
       }
     },
+    "Couldn't start the machine" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンの起動に失敗しました"
+          }
+        }
+      }
+    },
     "Couldn't stop the VM" : {
       "localizations" : {
         "ja" : {
@@ -1141,6 +1331,16 @@
         }
       }
     },
+    "Couldn't stop the machine" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンの停止に失敗しました"
+          }
+        }
+      }
+    },
     "Create" : {
       "localizations" : {
         "ja" : {
@@ -1151,12 +1351,32 @@
         }
       }
     },
+    "Create a Linux machine" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linux マシンを作成"
+          }
+        }
+      }
+    },
     "Create and start" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "作成して起動"
+          }
+        }
+      }
+    },
+    "Create machine" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンを作成"
           }
         }
       }
@@ -1187,6 +1407,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Docker が作成したため削除できません"
+          }
+        }
+      }
+    },
+    "Creating" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成中"
           }
         }
       }
@@ -1497,6 +1727,16 @@
         }
       }
     },
+    "Distribution" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディストリビューション"
+          }
+        }
+      }
+    },
     "Docker" : {
       "localizations" : {
         "ja" : {
@@ -1513,6 +1753,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ドライバ"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "編集"
+          }
+        }
+      }
+    },
+    "Edit machine" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンを編集"
           }
         }
       }
@@ -1543,6 +1803,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ を展開"
+          }
+        }
+      }
+    },
+    "Failed" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "失敗"
           }
         }
       }
@@ -1593,6 +1863,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "基本情報"
+          }
+        }
+      }
+    },
+    "Ghostty" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ghostty"
+          }
+        }
+      }
+    },
+    "Ghostty was not found on this Mac." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この Mac に Ghostty が見つかりません。"
           }
         }
       }
@@ -1667,6 +1957,16 @@
         }
       }
     },
+    "Its output can't be shown." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "出力は表示できません。"
+          }
+        }
+      }
+    },
     "Jump to end" : {
       "localizations" : {
         "ja" : {
@@ -1693,6 +1993,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "最新 %@"
+          }
+        }
+      }
+    },
+    "Linux machines" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linux マシン"
+          }
+        }
+      }
+    },
+    "Linux machines you create appear here." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成した Linux マシンがここに表示されます。"
           }
         }
       }
@@ -1727,6 +2047,16 @@
         }
       }
     },
+    "Loading machines…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンを読み込み中…"
+          }
+        }
+      }
+    },
     "Loading networks…" : {
       "localizations" : {
         "ja" : {
@@ -1743,6 +2073,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "統計を取得中"
+          }
+        }
+      }
+    },
+    "Loading the distributions was cancelled." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディストリビューションの取得を中止しました。"
           }
         }
       }
@@ -1783,6 +2123,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ログ"
+          }
+        }
+      }
+    },
+    "Machines" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシン"
           }
         }
       }
@@ -1867,6 +2217,16 @@
         }
       }
     },
+    "No Linux distributions are available." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "利用できる Linux ディストリビューションがありません。"
+          }
+        }
+      }
+    },
     "No VM operations yet" : {
       "localizations" : {
         "ja" : {
@@ -1917,6 +2277,16 @@
         }
       }
     },
+    "No folders are shared with this machine." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このマシンと共有しているフォルダはありません。"
+          }
+        }
+      }
+    },
     "No images" : {
       "localizations" : {
         "ja" : {
@@ -1947,6 +2317,16 @@
         }
       }
     },
+    "No machines" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンがありません"
+          }
+        }
+      }
+    },
     "No networks" : {
       "localizations" : {
         "ja" : {
@@ -1963,6 +2343,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "接続できるネットワークがありません"
+          }
+        }
+      }
+    },
+    "No operations on this machine yet" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このマシンの操作はまだありません"
           }
         }
       }
@@ -2037,12 +2427,32 @@
         }
       }
     },
+    "Open Settings" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定を開く"
+          }
+        }
+      }
+    },
     "Open main window" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "メインウィンドウを開く"
+          }
+        }
+      }
+    },
+    "Open shell" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シェルを開く"
           }
         }
       }
@@ -2067,12 +2477,32 @@
         }
       }
     },
+    "Opening a shell in a machine uses this app." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンのシェルを開くときに、このアプリを使います。"
+          }
+        }
+      }
+    },
     "Operation log" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "操作ログ"
+          }
+        }
+      }
+    },
+    "Other…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他…"
           }
         }
       }
@@ -2217,6 +2647,16 @@
         }
       }
     },
+    "Remove folder" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォルダの共有を解除"
+          }
+        }
+      }
+    },
     "Removing" : {
       "localizations" : {
         "ja" : {
@@ -2343,6 +2783,26 @@
         }
       }
     },
+    "Save changes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "変更を保存"
+          }
+        }
+      }
+    },
+    "Saved the changes to “%@”. They take effect the next time it starts." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%@」の変更を保存しました。次に起動したときに反映されます。"
+          }
+        }
+      }
+    },
     "Saved. Restart the VM to apply the changes." : {
       "localizations" : {
         "ja" : {
@@ -2359,6 +2819,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "保存しました。次回の起動時に反映されます。"
+          }
+        }
+      }
+    },
+    "Saving" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存中"
           }
         }
       }
@@ -2409,6 +2879,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "コンテナを選択してください"
+          }
+        }
+      }
+    },
+    "Shared folders" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "共有フォルダ"
           }
         }
       }
@@ -2643,6 +3123,16 @@
         }
       }
     },
+    "Stop the machine before editing it" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "編集する前にマシンを停止してください"
+          }
+        }
+      }
+    },
     "Stopped" : {
       "localizations" : {
         "ja" : {
@@ -2713,12 +3203,52 @@
         }
       }
     },
+    "Terminal" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminal"
+          }
+        }
+      }
+    },
+    "Terminal for machine shells" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンのシェルに使うターミナル"
+          }
+        }
+      }
+    },
+    "Terminal was not found on this Mac." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この Mac に Terminal が見つかりません。"
+          }
+        }
+      }
+    },
     "Terminates the Colima process. The VM may be left in an intermediate state." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colima のプロセスを終了する。VM が途中の状態で残る場合がある"
+          }
+        }
+      }
+    },
+    "That item is not an application. The terminal was not changed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選んだ項目はアプリケーションではありません。ターミナルは変更していません。"
           }
         }
       }
@@ -2793,6 +3323,16 @@
         }
       }
     },
+    "The last operation on this machine failed" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このマシンの直前の操作が失敗しました"
+          }
+        }
+      }
+    },
     "The operation failed for some containers (%lld succeeded, %lld failed)" : {
       "localizations" : {
         "en" : {
@@ -2825,6 +3365,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "作り直し先の VM タイプが現在と同じです。"
+          }
+        }
+      }
+    },
+    "The terminal app could not open the shell." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ターミナルアプリでシェルを開けませんでした。"
+          }
+        }
+      }
+    },
+    "The terminal app was not found. Choose an installed terminal in Settings." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ターミナルアプリが見つかりません。設定でインストール済みのターミナルを選んでください。"
           }
         }
       }
@@ -3029,6 +3589,16 @@
         }
       }
     },
+    "Writable" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "書き込み可"
+          }
+        }
+      }
+    },
     "You can create a VM with the default settings." : {
       "localizations" : {
         "ja" : {
@@ -3113,6 +3683,56 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "実行中"
+          }
+        }
+      }
+    },
+    "limactl exited with code %d" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "limactl が終了コード %d で終了しました"
+          }
+        }
+      }
+    },
+    "limactl not found" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "limactl が見つかりません"
+          }
+        }
+      }
+    },
+    "limactl was not found. Install Lima, then try again." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "limactl が見つかりません。Lima をインストールしてから、もう一度試してください。"
+          }
+        }
+      }
+    },
+    "limactl's output appears here when you create, start, stop or delete the machine." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンを作成・起動・停止・削除すると、limactl の出力がここに表示されます。"
+          }
+        }
+      }
+    },
+    "macOS denied this app permission to control the terminal. Allow it in System Settings › Privacy & Security › Automation, then try again." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macOS がこのアプリにターミナルの操作を許可しませんでした。システム設定 › プライバシーとセキュリティ › オートメーション で許可してから、もう一度試してください。"
           }
         }
       }

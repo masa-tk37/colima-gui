@@ -225,6 +225,80 @@ struct VMControllerCreateTests {
     await harness.finish()
   }
 
+  // MARK: activeCreateSpec
+
+  @Test func theActiveCreateSpecIsHeldFromBeginUntilTheOperationEnds() async {
+    let harness = await Harness(observations: [
+      .success(.absent), .success(.present(presentInstance)),
+    ])
+    #expect(harness.controller.activeCreateSpec == nil)
+    let spec = spec(cpus: 4, memoryGiB: 4, diskGiB: 50, vmType: .vz)
+
+    harness.controller.create(spec)
+    #expect(harness.controller.activeCreateSpec == spec)
+
+    let process = await harness.cli.process(at: 0)
+    #expect(harness.controller.activeCreateSpec == spec)
+    process.exit(code: 0)
+    await harness.finish()
+
+    #expect(harness.controller.activeOperation == nil)
+    #expect(harness.controller.activeCreateSpec == nil)
+  }
+
+  @Test func startOnAnAbsentVMHoldsTheCreationDefaultsAsTheActiveCreateSpec() async {
+    let harness = await Harness(observations: [
+      .success(.absent), .success(.present(presentInstance)),
+    ])
+
+    harness.controller.start()
+    #expect(harness.controller.activeCreateSpec == colimaDefaults)
+
+    let process = await harness.cli.process(at: 0)
+    process.exit(code: 0)
+    await harness.finish()
+    #expect(harness.controller.activeCreateSpec == nil)
+  }
+
+  @Test func theActiveCreateSpecIsClearedWhenCreateFailsAtPreflightOrAtTheCommand() async {
+    let preflight = await Harness()
+    preflight.cli.configure {
+      $0.toolchain = ToolchainStatus(
+        colima: .found(path: "/opt/homebrew/bin/colima"), missingByVMType: [.qemu: ["qemu-img"]])
+    }
+    preflight.controller.create(spec(cpus: 2, memoryGiB: 2, diskGiB: 100, vmType: .qemu))
+    #expect(preflight.controller.activeCreateSpec != nil)
+    await preflight.finish()
+    #expect(preflight.controller.lastFailure?.stage == .preflight)
+    #expect(preflight.controller.activeCreateSpec == nil)
+
+    let command = await Harness()
+    command.cli.configure { $0.scriptedRuns = [[.exited(code: 1)]] }
+    command.controller.create(colimaDefaults)
+    await command.finish()
+    #expect(command.controller.lastFailure?.stage == .creating)
+    #expect(command.controller.activeCreateSpec == nil)
+  }
+
+  @Test func theActiveCreateSpecIsClearedWhenCreateIsAborted() async {
+    let date = ManualDate()
+    let cli = FakeColimaCLI()
+    let controller = VMController(cli: cli, files: InMemoryColimaFileStore(), now: { date.now })
+    cli.configure { $0.listDefault = [.success(.absent)] }
+    await controller.redetectToolchain()
+
+    controller.create(colimaDefaults)
+    let process = await cli.process(at: 0)
+    date.advance(by: 180)
+    controller.abortOperation()
+    await controller.operationTask?.value
+
+    #expect(controller.lastFailure?.cause == .aborted)
+    #expect(controller.activeOperation == nil)
+    #expect(controller.activeCreateSpec == nil)
+    #expect(process.terminateCount == 1)
+  }
+
   // MARK: creationDefaults
 
   @Test func defaultsAreColimaDefaultsWithoutASettingsFile() async {

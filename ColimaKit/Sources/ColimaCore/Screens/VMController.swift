@@ -54,6 +54,8 @@ public final class VMController {
   /// Memory only: the spec of the last create whose command actually ran.
   @ObservationIgnored var lastCreatedSpec: VMCreateSpec?
   @ObservationIgnored var lastRecreatePlan: RecreatePlan?
+  /// The spec of the create or recreate in flight, held from `begin` until the slot is released. Read-only for observers: it drives no transition or display.
+  @ObservationIgnored var activeCreateSpec: VMCreateSpec?
 
   public convenience init(cli: any ColimaCLI, files: any ColimaFileStore) {
     self.init(cli: cli, files: files, now: { Date() })

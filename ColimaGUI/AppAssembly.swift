@@ -15,6 +15,8 @@ final class AppAssembly {
   let networkStore: NetworkStore
   let slots: ContainerOperationSlots
   let sessions: ContainerSessionFactory
+  let machineController: MachineController
+  let terminal: TerminalModel
 
   private let engine: DockerEngineClient
   private let agent: AgentClient
@@ -32,6 +34,10 @@ final class AppAssembly {
       socketPath: home.appendingPathComponent(".colima/default/docker.sock").path
     )
     let slots = ContainerOperationSlots()
+    let limaCLI = LimaCommandLine(agent: agent)
+    let launcher = TerminalShellLauncher(locateApplication: { identifier in
+      NSWorkspace.shared.urlForApplication(withBundleIdentifier: identifier)
+    })
 
     let vmController = VMController(cli: cli, files: files)
     let containerStore = ContainerStore(engine: engine, controller: vmController, slots: slots)
@@ -52,24 +58,38 @@ final class AppAssembly {
       containerListDidChange: { await containerStore.refresh() }
     )
     sessions = ContainerSessionFactory(engine: engine)
+    machineController = MachineController(
+      cli: limaCLI,
+      vmController: vmController,
+      host: .current,
+      homeDirectory: home.path,
+      directoryExists: MachineController.directoryExistsOnDisk
+    )
+    terminal = TerminalModel(launcher: launcher, defaults: .standard)
   }
 
   func start() {
     guard monitorTask == nil else { return }
 
     let controller = vmController
+    let machines = machineController
     monitorTask = Task { await controller.monitor() }
     let agent = agent
     Task { await BackgroundServices.register(agent: agent) }
 
-    controller.setCadence(NSApplication.shared.isActive ? .foreground : .background)
+    let initialCadence: PollingCadence = NSApplication.shared.isActive ? .foreground : .background
+    controller.setCadence(initialCadence)
+    machines.setCadence(initialCadence)
     let center = NotificationCenter.default
     activationObservers = [
       (NSApplication.didBecomeActiveNotification, PollingCadence.foreground),
       (NSApplication.didResignActiveNotification, PollingCadence.background),
     ].map { name, cadence in
       center.addObserver(forName: name, object: nil, queue: .main) { _ in
-        MainActor.assumeIsolated { controller.setCadence(cadence) }
+        MainActor.assumeIsolated {
+          controller.setCadence(cadence)
+          machines.setCadence(cadence)
+        }
       }
     }
   }

@@ -69,14 +69,14 @@ public enum VMSettingsValidator {
   }
 
   /// ASCII digits only: `Int(_:)` would also accept a leading `+`, and `Character.isNumber` accepts non-ASCII digits.
-  private static func parseWholeNumber(_ text: String) -> Int? {
+  static func parseWholeNumber(_ text: String) -> Int? {
     let body = text.trimmingWhitespace()
     guard isASCIIDigits(body), let value = Int(body), value >= 1 else { return nil }
     return value
   }
 
   /// Plain decimal notation only: `Double(_:)` would also accept `nan`, `inf`, exponents, and hex floats.
-  private static func parseDecimal(_ text: String) -> Double? {
+  static func parseDecimal(_ text: String) -> Double? {
     let body = text.trimmingWhitespace()
     let parts = body.split(separator: ".", maxSplits: 1, omittingEmptySubsequences: false)
     guard parts.allSatisfy({ isASCIIDigits($0) }),

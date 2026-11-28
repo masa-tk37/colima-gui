@@ -15,6 +15,14 @@ enum LifecycleOperation: Equatable {
     }
   }
 
+  var createSpec: VMCreateSpec? {
+    switch self {
+    case .create(let spec): spec
+    case .recreate(let plan): plan.spec
+    case .start, .stop, .restart: nil
+    }
+  }
+
   fileprivate var busyRejectionReason: String {
     switch self {
     case .stop:
@@ -143,6 +151,7 @@ extension VMController {
     activeOperation = VMOperationProgress(
       kind: kind, stage: operation.initialStage, startedAt: started, stageStartedAt: started)
     latestRecord = VMOperationRecord(kind: kind, startedAt: started)
+    activeCreateSpec = operation.createSpec
     lastFailure = nil
     abortRequest = nil
     stageAbortAsked = false
@@ -222,6 +231,7 @@ extension VMController {
     }
     latestRecord?.end(failure.map(VMOperationOutcome.failed) ?? .succeeded, at: now())
     activeOperation = nil
+    activeCreateSpec = nil
     abortRequest = nil
     stageAbortAsked = false
     if let failure {

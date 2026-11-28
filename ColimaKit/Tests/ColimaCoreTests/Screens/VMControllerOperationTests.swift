@@ -427,6 +427,42 @@ struct VMControllerOperationTests {
           kind: .restart, stage: .starting, cause: .exited(code: 2), outputLines: ["no disk"]))
   }
 
+  // MARK: activeCreateSpec
+
+  @Test func startStopAndRestartLeaveTheActiveCreateSpecEmpty() async {
+    let startHarness = await Harness(observations: [.success(stopped), .success(running)])
+    #expect(startHarness.controller.activeCreateSpec == nil)
+    startHarness.controller.start()
+    #expect(startHarness.controller.activeCreateSpec == nil)
+    let start = await startHarness.cli.process(at: 0)
+    start.exit(code: 0)
+    await startHarness.finish()
+    #expect(startHarness.controller.activeCreateSpec == nil)
+
+    let stopHarness = await Harness(observations: [.success(running), .success(stopped)])
+    stopHarness.controller.requestStop(from: .window)
+    _ = stopHarness.controller.confirm(id: stopHarness.controller.pendingConfirmation!.id)
+    #expect(stopHarness.controller.activeCreateSpec == nil)
+    let stop = await stopHarness.cli.process(at: 0)
+    stop.exit(code: 0)
+    await stopHarness.finish()
+    #expect(stopHarness.controller.activeCreateSpec == nil)
+
+    let restartHarness = await Harness(observations: [
+      .success(running), .success(stopped), .success(running),
+    ])
+    restartHarness.controller.requestRestart()
+    _ = restartHarness.controller.confirm(id: restartHarness.controller.pendingConfirmation!.id)
+    #expect(restartHarness.controller.activeCreateSpec == nil)
+    let restartStop = await restartHarness.cli.process(at: 0)
+    restartStop.exit(code: 0)
+    let restartStart = await restartHarness.cli.process(at: 1)
+    #expect(restartHarness.controller.activeCreateSpec == nil)
+    restartStart.exit(code: 0)
+    await restartHarness.finish()
+    #expect(restartHarness.controller.activeCreateSpec == nil)
+  }
+
   // MARK: abort
 
   @Test func abortIsRefusedBeforeThreeMinutes() async {

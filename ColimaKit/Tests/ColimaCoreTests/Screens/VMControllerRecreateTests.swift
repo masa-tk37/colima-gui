@@ -276,6 +276,42 @@ struct VMControllerRecreateTests {
     #expect(harness.controller.lastFailure?.stage == .preflight)
   }
 
+  // MARK: activeCreateSpec
+
+  @Test func theActiveCreateSpecIsTheNewSpecThroughoutARecreateAndClearedAfterwards() async {
+    let harness = await Harness(observations: [
+      .success(running), .success(.absent), .success(running),
+    ])
+    #expect(harness.controller.activeCreateSpec == nil)
+    _ = await harness.controller.requestRecreate(harness.plan)
+    #expect(harness.controller.activeCreateSpec == nil)
+
+    #expect(harness.controller.confirm(id: harness.controller.pendingConfirmation!.id) == .started)
+    #expect(harness.controller.activeCreateSpec == qemuSpec)
+
+    let delete = await harness.cli.process(at: 0)
+    #expect(harness.controller.activeCreateSpec == qemuSpec)
+    delete.exit(code: 0)
+    let create = await harness.cli.process(at: 1)
+    #expect(harness.controller.activeCreateSpec == qemuSpec)
+    create.exit(code: 0)
+    await harness.finish()
+
+    #expect(harness.controller.activeCreateSpec == nil)
+  }
+
+  @Test func theActiveCreateSpecIsClearedWhenARecreateFails() async {
+    let harness = await Harness(observations: [.success(running), .success(running)])
+    harness.cli.configure { $0.scriptedRuns = [[.exited(code: 1)]] }
+
+    await harness.requestAndConfirm()
+    #expect(harness.controller.activeCreateSpec == qemuSpec)
+    await harness.finish()
+
+    #expect(harness.controller.lastFailure?.stage == .deleting)
+    #expect(harness.controller.activeCreateSpec == nil)
+  }
+
   // MARK: delete stage
 
   @Test func aFailedDeleteKeepsTheStageOutputAndPlanAndDoesNotCreate() async {

@@ -36,14 +36,8 @@ nonisolated enum BackgroundServices {
     case .notRegistered:
       AgentRegistration.registerIfNeeded()
     case .enabled where AgentRegistration.isFromAnotherBuild:
-      let commandIsRunning: Bool
-      switch await agent.prepareForUpdate() {
-      case .idle: commandIsRunning = false
-      case .busy: commandIsRunning = true
-      case .unreachable: commandIsRunning = await AgentRegistration.colimaCommandIsRunning()
-      }
-      if commandIsRunning {
-        ColimaLog.vm.info("agent update postponed: a VM command is still running")
+      if await AgentRegistration.shouldDeferReplacement(readiness: await agent.prepareForUpdate()) {
+        ColimaLog.vm.info("agent update postponed: a VM or machine command is still running")
         return
       }
       do {

@@ -7,15 +7,18 @@ public enum SidebarItem: Hashable, CaseIterable, Sendable {
   case images
   case volumes
   case networks
+  case machines
 
   enum Group: CaseIterable {
     case vm
     case docker
+    case linuxMachines
 
     var title: LocalizedStringResource {
       switch self {
       case .vm: LocalizedStringResource("VM", bundle: #bundle)
       case .docker: LocalizedStringResource("Docker", bundle: #bundle)
+      case .linuxMachines: LocalizedStringResource("Linux machines", bundle: #bundle)
       }
     }
 
@@ -28,6 +31,7 @@ public enum SidebarItem: Hashable, CaseIterable, Sendable {
     switch self {
     case .overview, .settings: .vm
     case .containers, .images, .volumes, .networks: .docker
+    case .machines: .linuxMachines
     }
   }
 
@@ -39,6 +43,7 @@ public enum SidebarItem: Hashable, CaseIterable, Sendable {
     case .images: LocalizedStringResource("Images", bundle: #bundle)
     case .volumes: LocalizedStringResource("Volumes", bundle: #bundle)
     case .networks: LocalizedStringResource("Networks", bundle: #bundle)
+    case .machines: LocalizedStringResource("Machines", bundle: #bundle)
     }
   }
 
@@ -50,6 +55,7 @@ public enum SidebarItem: Hashable, CaseIterable, Sendable {
     case .images: "square.stack.3d.up"
     case .volumes: "externaldrive"
     case .networks: "network"
+    case .machines: "server.rack"
     }
   }
 

@@ -21,7 +21,7 @@ extension CollectedRun {
     }
   }
 
-  private static func tail(_ text: String) -> [String] {
+  static func tail(_ text: String) -> [String] {
     let lines = text.split(whereSeparator: \.isNewline).map(String.init)
     return Array(lines.suffix(diagnosticLineLimit))
   }

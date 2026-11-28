@@ -102,3 +102,37 @@ private func makeRequest(
   #expect(ConfirmationOutcome.rejectedBusy(reason: "a") != .rejectedBusy(reason: "b"))
   #expect(ConfirmationOutcome.rejectedBusy(reason: "a") != .started)
 }
+
+@Test func confirmRoleDefaultsToDestructiveForBothInitializers() {
+  #expect(makeRequest().confirmRole == .destructive)
+  let single = ConfirmationRequest(
+    intent: .stopVM, title: "Stop", message: "m", item: "i", confirmLabel: "Stop")
+  #expect(single.confirmRole == .destructive)
+}
+
+@Test func confirmRoleStandardIsCarriedByBothInitializers() {
+  let full = ConfirmationRequest(
+    intent: .stopVM, origin: .window, title: "t", message: "m", itemGroups: [],
+    confirmLabel: "OK", confirmRole: .standard)
+  #expect(full.confirmRole == .standard)
+  let single = ConfirmationRequest(
+    intent: .stopVM, title: "t", message: "m", item: "i", confirmLabel: "OK",
+    confirmRole: .standard)
+  #expect(single.confirmRole == .standard)
+  #expect(full != makeRequest(id: full.id))
+}
+
+@Test func machineIntentsCompareByAssociatedValues() throws {
+  let name = try MachineName.parse("dev", limaHomeUTF8Count: 20).get()
+  let other = try MachineName.parse("ci", limaHomeUTF8Count: 20).get()
+  #expect(DestructiveIntent.deleteMachine(name, wasRunning: true) == .deleteMachine(name, wasRunning: true))
+  #expect(DestructiveIntent.deleteMachine(name, wasRunning: true) != .deleteMachine(name, wasRunning: false))
+  #expect(DestructiveIntent.deleteMachine(name, wasRunning: false) != .deleteMachine(other, wasRunning: false))
+  let warning = MemoryWarning(totalBytes: 3, physicalBytes: 4, thresholdBytes: 2)
+  #expect(DestructiveIntent.startMachine(name, warning: warning) == .startMachine(name, warning: warning))
+  #expect(
+    DestructiveIntent.startMachine(name, warning: warning)
+      != .startMachine(
+        name, warning: MemoryWarning(totalBytes: 5, physicalBytes: 4, thresholdBytes: 2)))
+  #expect(DestructiveIntent.deleteMachine(name, wasRunning: false) != .startMachine(name, warning: warning))
+}

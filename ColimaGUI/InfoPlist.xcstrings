@@ -1,0 +1,16 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "NSAppleEventsUsageDescription" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linux マシンのシェルを Ghostty で開くために、Ghostty の操作を許可してください。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

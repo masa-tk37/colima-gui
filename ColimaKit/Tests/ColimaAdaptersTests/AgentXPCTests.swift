@@ -20,17 +20,38 @@ private final class CountingLauncher: VMCommandLauncher {
   }
 }
 
-private final class AgentFixture {
+final class ForeignMachines: Sendable {
+  private let keys = Mutex<Set<MachineKey>>([])
+
+  func set(_ key: MachineKey, running: Bool) {
+    keys.withLock { keys in
+      if running { keys.insert(key) } else { keys.remove(key) }
+    }
+  }
+
+  func contains(_ key: MachineKey) -> Bool { keys.withLock { $0.contains(key) } }
+}
+
+final class AgentFixture {
   let listener = NSXPCListener.anonymous()
   let service: AgentService
+  let foreignMachines = ForeignMachines()
 
+  /// `foreignCommandIsRunning` answers for the colima target; machine targets follow `foreignMachines`.
   init(
-    launcher: any VMCommandLauncher, foreignCommandIsRunning: Bool = false,
-    updateHold: Duration = .seconds(30)
+    launcher: any VMCommandLauncher, machineLauncher: any MachineCommandLauncher = GatedMachineLauncher(),
+    foreignCommandIsRunning: Bool = false, updateHold: Duration = .seconds(30)
   ) {
+    let foreignMachines = foreignMachines
     service = AgentService(
-      launcher: launcher, peerRequirement: { .unchecked },
-      foreignCommandIsRunning: { foreignCommandIsRunning }, updateHold: updateHold)
+      vmLauncher: launcher, machineLauncher: machineLauncher, peerRequirement: { .unchecked },
+      foreignCommandIsRunning: { target in
+        switch target {
+        case .colima: foreignCommandIsRunning
+        case .machine(let key): foreignMachines.contains(key)
+        }
+      },
+      updateHold: updateHold)
     listener.delegate = service
     listener.resume()
   }
@@ -124,6 +145,9 @@ private final class ScriptedAgent: NSObject, NSXPCListenerDelegate, ColimaAgentP
   func terminate(runID: UUID, reply: @escaping @Sendable (Bool) -> Void) { reply(false) }
   func prepareForUpdate(reply: @escaping @Sendable (Bool) -> Void) {
     if behavior != .silent { reply(true) }
+  }
+  func activeRuns(reply: @escaping @Sendable (Data) -> Void) {
+    if behavior != .silent { reply(Data("[]".utf8)) }
   }
 }
 
@@ -265,7 +289,9 @@ struct AgentXPCTests {
 
     for payload in [
       Data("not json".utf8),
-      Data(#"{"kind":"create","cpus":0,"memoryGiB":8,"diskGiB":100,"vmType":"vz"}"#.utf8),
+      Data(
+        #"{"target":"colima","command":{"kind":"create","cpus":0,"memoryGiB":8,"diskGiB":100,"vmType":"vz"}}"#
+          .utf8),
     ] {
       let reply = await withCheckedContinuation { continuation in
         proxy.start(runID: UUID(), command: payload) { continuation.resume(returning: $0) }
@@ -288,7 +314,9 @@ struct AgentXPCTests {
     connection.resume()
     let proxy = try #require(connection.remoteObjectProxy as? any ColimaAgentProtocol)
     let reply = await withCheckedContinuation { continuation in
-      proxy.start(runID: UUID(), command: try! JSONEncoder().encode(VMCommand.start)) {
+      proxy.start(
+        runID: UUID(), command: try! JSONEncoder().encode(AgentCommand.colima(.start))
+      ) {
         continuation.resume(returning: $0)
       }
     }

@@ -1,7 +1,8 @@
 import Foundation
 
-/// An irreversible operation, fixed at the moment the user is asked. Prune intents carry the candidate list
-/// shown in the confirmation, so approval deletes exactly those items and nothing that appeared later.
+/// An irreversible operation, or one that needs the user's judgment, fixed at the moment the user is asked.
+/// Prune intents carry the candidate list shown in the confirmation, so approval deletes exactly those items and
+/// nothing that appeared later.
 public enum DestructiveIntent: Sendable, Equatable {
   case stopVM
   case restartVM
@@ -13,6 +14,14 @@ public enum DestructiveIntent: Sendable, Equatable {
   case deleteNetwork(DeletableNetworkID)
   case pruneNetworks(ids: [DeletableNetworkID])
   case disconnect(container: ContainerID, network: NetworkID)
+  /// `wasRunning` is the state the user was shown; approval is refused when the machine no longer matches it.
+  case deleteMachine(MachineName, wasRunning: Bool)
+  case startMachine(MachineName, warning: MemoryWarning)
+}
+
+public enum ConfirmationRole: Sendable, Equatable {
+  case destructive
+  case standard
 }
 
 public enum ConfirmationOrigin: Sendable, Equatable {
@@ -85,6 +94,7 @@ public struct ConfirmationRequest: Sendable, Identifiable, Equatable {
   /// Volume prune uses two groups, anonymous and named.
   public let itemGroups: [ConfirmationItemGroup]
   public let confirmLabel: String
+  public let confirmRole: ConfirmationRole
 
   public init(
     id: UUID = UUID(),
@@ -93,7 +103,8 @@ public struct ConfirmationRequest: Sendable, Identifiable, Equatable {
     title: String,
     message: String,
     itemGroups: [ConfirmationItemGroup],
-    confirmLabel: String
+    confirmLabel: String,
+    confirmRole: ConfirmationRole = .destructive
   ) {
     self.id = id
     self.intent = intent
@@ -102,14 +113,17 @@ public struct ConfirmationRequest: Sendable, Identifiable, Equatable {
     self.message = message
     self.itemGroups = itemGroups
     self.confirmLabel = confirmLabel
+    self.confirmRole = confirmRole
   }
 
   public init(
-    intent: DestructiveIntent, title: String, message: String, item: String, confirmLabel: String
+    intent: DestructiveIntent, title: String, message: String, item: String, confirmLabel: String,
+    confirmRole: ConfirmationRole = .destructive
   ) {
     self.init(
       intent: intent, origin: .window, title: title, message: message,
-      itemGroups: [ConfirmationItemGroup(title: nil, items: [item])], confirmLabel: confirmLabel)
+      itemGroups: [ConfirmationItemGroup(title: nil, items: [item])], confirmLabel: confirmLabel,
+      confirmRole: confirmRole)
   }
 
   public func isShown(on surface: ConfirmationOrigin) -> Bool {

@@ -20,18 +20,30 @@ enum AgentMessages {
     }
   }
 
-  static func rejected(_ reply: AgentStartReply) -> String {
+  static func rejected(_ reply: AgentStartReply, for target: AgentTarget = .colima) -> String {
     switch reply {
     case .accepted, .undecodableCommand:
       String(localized: "The background helper rejected the command.", bundle: #bundle)
     case .busy:
+      busy(for: target)
+    case .updating:
+      String(
+        localized: "The background helper is being updated. Retry in a moment.", bundle: #bundle)
+    }
+  }
+
+  private static func busy(for target: AgentTarget) -> String {
+    switch target {
+    case .colima:
       String(
         localized:
           "Another colima command is still running in the background. Wait for it to finish, then retry.",
         bundle: #bundle)
-    case .updating:
+    case .machine:
       String(
-        localized: "The background helper is being updated. Retry in a moment.", bundle: #bundle)
+        localized:
+          "Another operation is still running on this machine in the background. Wait for it to finish, then retry.",
+        bundle: #bundle)
     }
   }
 

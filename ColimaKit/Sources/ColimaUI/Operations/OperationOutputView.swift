@@ -46,7 +46,7 @@ private struct OperationStatus: View {
           .font(.headline)
       }
       LabeledContent(LocalizedStringResource("Elapsed time", bundle: #bundle)) {
-        Text(Self.clock(seconds: Self.seconds(from: operation.startedAt, to: now)))
+        Text(OperationClock.text(seconds: Self.seconds(from: operation.startedAt, to: now)))
           .monospacedDigit()
       }
       LabeledContent(LocalizedStringResource("Since last output", bundle: #bundle)) {
@@ -65,13 +65,6 @@ private struct OperationStatus: View {
 
   private static func seconds(from start: Date, to end: Date) -> Int {
     max(0, Int(end.timeIntervalSince(start)))
-  }
-
-  private static func clock(seconds: Int) -> String {
-    let duration = Duration.seconds(seconds)
-    return seconds >= 3600
-      ? duration.formatted(.time(pattern: .hourMinuteSecond))
-      : duration.formatted(.time(pattern: .minuteSecond))
   }
 }
 

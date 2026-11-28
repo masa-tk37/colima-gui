@@ -34,8 +34,8 @@ public enum VMCommand: Sendable, Equatable {
     return arguments
   }
 
-  /// Locale-independent, so a decimal separator never reaches the colima flag parser.
-  private static func gibibytes(_ value: Double) -> String {
+  /// Locale-independent, so a decimal separator never reaches the colima or limactl flag parser.
+  static func gibibytes(_ value: Double) -> String {
     if value.rounded() == value, abs(value) < 1e15 {
       return String(Int(value))
     }

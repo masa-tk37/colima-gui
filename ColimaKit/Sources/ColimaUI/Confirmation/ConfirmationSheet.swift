@@ -31,7 +31,7 @@ struct ConfirmationSheet: View {
           Button(LocalizedStringResource("Cancel", bundle: #bundle), role: .cancel, action: cancel)
         }
         ToolbarItem(placement: .confirmationAction) {
-          Button(request.confirmLabel, role: .destructive, action: approve)
+          Button(request.confirmLabel, role: request.confirmRole.buttonRole, action: approve)
         }
       }
     }

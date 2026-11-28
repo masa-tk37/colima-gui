@@ -1,10 +1,15 @@
+import ColimaCore
 import SwiftUI
 
 /// VM settings are a sidebar screen (`VMSettingsView`), not here.
 public struct AppSettingsView: View {
   @AppStorage(OperationLogWindow.opensOnStartKey) private var opensLogOnStart = false
 
-  public init() {}
+  private let terminal: TerminalModel
+
+  public init(terminal: TerminalModel) {
+    self.terminal = terminal
+  }
 
   public var body: some View {
     Form {
@@ -12,6 +17,7 @@ public struct AppSettingsView: View {
       Text("colima's output is always available from Window › Operation log.", bundle: #bundle)
         .font(.callout)
         .foregroundStyle(.secondary)
+      TerminalSettingsSection(model: terminal)
     }
     .formStyle(.grouped)
     .frame(width: 460)
@@ -21,6 +27,10 @@ public struct AppSettingsView: View {
 
 #if DEBUG
   #Preview("App settings") {
-    AppSettingsView()
+    PreviewHost {
+      await TerminalModelPreviews.make(.available).model
+    } content: { terminal in
+      AppSettingsView(terminal: terminal)
+    }
   }
 #endif

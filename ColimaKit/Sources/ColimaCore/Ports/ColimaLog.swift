@@ -7,4 +7,5 @@ public enum ColimaLog {
   public static let vm = Logger(subsystem: subsystem, category: "vm")
   public static let docker = Logger(subsystem: subsystem, category: "docker")
   public static let process = Logger(subsystem: subsystem, category: "process")
+  public static let machine = Logger(subsystem: subsystem, category: "machine")
 }

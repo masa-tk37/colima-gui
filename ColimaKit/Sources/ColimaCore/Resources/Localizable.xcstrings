@@ -17,6 +17,36 @@
         }
       }
     },
+    "%@ (latest)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@（最新）"
+          }
+        }
+      }
+    },
+    "A Lima instance with a conflicting name already exists." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前が競合する Lima インスタンスが既にあります。"
+          }
+        }
+      }
+    },
+    "A machine with this name already exists." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この名前のマシンは既にあります。"
+          }
+        }
+      }
+    },
     "A network named “%@” already exists." : {
       "localizations" : {
         "ja" : {
@@ -97,6 +127,36 @@
         }
       }
     },
+    "Another operation is running on this machine, so the deletion was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このマシンでは別の操作が実行中のため、削除を実行しませんでした。"
+          }
+        }
+      }
+    },
+    "Another operation is running on this machine, so the start was not performed." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このマシンでは別の操作が実行中のため、起動を実行しませんでした。"
+          }
+        }
+      }
+    },
+    "CPU can be at most %lld on this Mac." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この Mac では CPU は最大 %lld までです。"
+          }
+        }
+      }
+    },
     "Changing the VM type from %@ to %@ deletes the VM and recreates it. All containers, images, and volumes in the VM are lost and cannot be recovered. Colima settings other than the VM type, such as mounts and networks, return to their defaults." : {
       "localizations" : {
         "en" : {
@@ -109,6 +169,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VM タイプを %1$@ から %2$@ に変更するため、VM を削除して作り直します。VM 内のコンテナ・イメージ・ボリュームはすべて失われ、元に戻せません。マウントやネットワークなど、VM タイプ以外の Colima の設定は既定値に戻ります。"
+          }
+        }
+      }
+    },
+    "Choose a distribution." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディストリビューションを選んでください。"
           }
         }
       }
@@ -411,6 +481,16 @@
         }
       }
     },
+    "Delete the machine “%@”?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシン「%@」を削除しますか？"
+          }
+        }
+      }
+    },
     "Delete the network “%@”?" : {
       "localizations" : {
         "ja" : {
@@ -487,6 +567,16 @@
         }
       }
     },
+    "Enter a name." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前を入力してください。"
+          }
+        }
+      }
+    },
     "Enter a network name." : {
       "localizations" : {
         "ja" : {
@@ -527,12 +617,42 @@
         }
       }
     },
+    "Enter an absolute path." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "絶対パスを入力してください。"
+          }
+        }
+      }
+    },
     "Enter the subnet as 172.28.0.0/16 (IPv4, prefix length 0-32) or fd00::/64 (IPv6, 0-128)." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "サブネットは 172.28.0.0/16（IPv4、プレフィックス長 0〜32）か fd00::/64（IPv6、0〜128）の形式で入力してください。"
+          }
+        }
+      }
+    },
+    "Everything inside the machine is lost when it is deleted. This cannot be undone." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンを削除すると、マシン内のものはすべて失われます。元に戻せません。"
+          }
+        }
+      }
+    },
+    "Memory can be at most %lld GiB on this Mac." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この Mac ではメモリは最大 %lld GiB までです。"
           }
         }
       }
@@ -593,6 +713,42 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VM を再起動しますか？"
+          }
+        }
+      }
+    },
+    "Start" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "起動"
+          }
+        }
+      }
+    },
+    "Start the machine “%@”?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシン「%@」を起動しますか？"
+          }
+        }
+      }
+    },
+    "Starting this machine brings the memory allocated to running VMs to %@. That is above %@, 75%% of this Mac’s %@. Other apps and containers may slow down." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting this machine brings the memory allocated to running VMs to %1$@. That is above %2$@, 75%% of this Mac’s %3$@. Other apps and containers may slow down."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このマシンを起動すると、稼働中の VM に割り当てるメモリが合計 %1$@ になります。この Mac の %3$@ の 75%% にあたる %2$@ を超えるため、ほかのアプリやコンテナの動作が遅くなる場合があります。"
           }
         }
       }
@@ -687,6 +843,26 @@
         }
       }
     },
+    "The disk can be at most %lld GiB on this Mac." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この Mac ではディスクは最大 %lld GiB までです。"
+          }
+        }
+      }
+    },
+    "The disk can only be expanded. It cannot be smaller than the current %lld GiB." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスクは拡大だけできます。現在の %lld GiB より小さくはできません。"
+          }
+        }
+      }
+    },
     "The disk cannot be smaller than the current %lld GiB. To shrink it, recreate the VM." : {
       "localizations" : {
         "ja" : {
@@ -723,6 +899,36 @@
         }
       }
     },
+    "The machine’s state changed, so the deletion was not performed. Choose Delete again." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンの状態が変わったため、削除を実行しませんでした。もう一度「削除」を選んでください。"
+          }
+        }
+      }
+    },
+    "The machine’s state changed, so the start was not performed. Choose Start again." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マシンの状態が変わったため、起動を実行しませんでした。もう一度「起動」を選んでください。"
+          }
+        }
+      }
+    },
+    "The name can be at most %lld characters." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前は %lld 文字までです。"
+          }
+        }
+      }
+    },
     "The network is deleted. A network with connected containers cannot be deleted." : {
       "localizations" : {
         "ja" : {
@@ -739,6 +945,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "操作が中断されました。"
+          }
+        }
+      }
+    },
+    "The path cannot contain \"{{\"." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パスに「{{」は使えません。"
           }
         }
       }
@@ -809,6 +1025,46 @@
         }
       }
     },
+    "This folder does not exist." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このフォルダは存在しません。"
+          }
+        }
+      }
+    },
+    "This folder overlaps another shared folder." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このフォルダは別の共有フォルダと重なっています。"
+          }
+        }
+      }
+    },
+    "This machine is running. It is force-stopped before it is deleted, and everything inside it is lost. This cannot be undone." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このマシンは稼働中です。削除する前に強制停止し、マシン内のものはすべて失われます。元に戻せません。"
+          }
+        }
+      }
+    },
+    "This name is reserved for the default VM." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この名前は既定の VM 用に予約されています。"
+          }
+        }
+      }
+    },
     "This network is already being deleted, so the deletion was not performed." : {
       "localizations" : {
         "ja" : {
@@ -869,6 +1125,16 @@
         }
       }
     },
+    "Use only letters, digits, and single \".\", \"_\", or \"-\" between them. The name cannot end in .yml or .yaml." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英字と数字のほか、間に 1 つずつ挟む「.」「_」「-」だけを使えます。名前の末尾を .yml や .yaml にはできません。"
+          }
+        }
+      }
+    },
     "colima list did not finish in time" : {
       "localizations" : {
         "ja" : {
@@ -925,6 +1191,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "colima が見つかりません。"
+          }
+        }
+      }
+    },
+    "limactl output ended unexpectedly" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "limactl の出力が途中で終わりました"
           }
         }
       }

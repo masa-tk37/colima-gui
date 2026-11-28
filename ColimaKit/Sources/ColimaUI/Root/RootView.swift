@@ -12,6 +12,8 @@ public struct RootView: View {
   private let networkStore: NetworkStore
   private let slots: ContainerOperationSlots
   private let sessions: ContainerSessionFactory
+  private let machineController: MachineController
+  private let terminal: TerminalModel
 
   @State private var selection: SidebarItem = .overview
   @State private var selectedContainer: ContainerID?
@@ -25,7 +27,9 @@ public struct RootView: View {
     volumeStore: VolumeStore,
     networkStore: NetworkStore,
     slots: ContainerOperationSlots,
-    sessions: ContainerSessionFactory
+    sessions: ContainerSessionFactory,
+    machineController: MachineController,
+    terminal: TerminalModel
   ) {
     self.controller = controller
     self.settingsModel = settingsModel
@@ -36,6 +40,8 @@ public struct RootView: View {
     self.networkStore = networkStore
     self.slots = slots
     self.sessions = sessions
+    self.machineController = machineController
+    self.terminal = terminal
   }
 
   public var body: some View {
@@ -90,6 +96,8 @@ public struct RootView: View {
       VolumeListView(store: volumeStore, controller: controller)
     case .networks:
       NetworkListView(store: networkStore, controller: controller)
+    case .machines:
+      MachineListView(controller: machineController, terminal: terminal)
     }
   }
 

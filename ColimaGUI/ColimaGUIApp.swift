@@ -25,7 +25,9 @@ struct ColimaGUIApp: App {
         volumeStore: assembly.volumeStore,
         networkStore: assembly.networkStore,
         slots: assembly.slots,
-        sessions: assembly.sessions
+        sessions: assembly.sessions,
+        machineController: assembly.machineController,
+        terminal: assembly.terminal
       )
       .frame(minWidth: 960, minHeight: 520)
     }
@@ -45,7 +47,7 @@ struct ColimaGUIApp: App {
     .restorationBehavior(.disabled)
 
     Settings {
-      AppSettingsView()
+      AppSettingsView(terminal: assembly.terminal)
     }
 
     MenuBarExtra {

@@ -43,7 +43,7 @@ public struct ConfirmationPresenter: View {
       titleVisibility: .visible,
       presenting: dialogRequest
     ) { request in
-      Button(request.confirmLabel, role: .destructive) { approve(request) }
+      Button(request.confirmLabel, role: request.confirmRole.buttonRole) { approve(request) }
       Button(LocalizedStringResource("Cancel", bundle: #bundle), role: .cancel, action: dismiss)
     } message: { request in
       Text(request.message)

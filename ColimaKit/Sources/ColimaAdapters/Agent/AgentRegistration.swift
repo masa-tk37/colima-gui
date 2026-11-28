@@ -44,8 +44,38 @@ public enum AgentRegistration: Sendable, Equatable {
     recordRegisteredBuild()
   }
 
-  public static func colimaCommandIsRunning() async -> Bool {
+  static func colimaCommandIsRunning() async -> Bool {
     await AgentMain.colimaCommandIsRunning()
+  }
+
+  public static func shouldDeferReplacement(
+    readiness: AgentClient.UpdateReadiness,
+    externalCommandIsRunning: @Sendable () async -> Bool = { await agentCommandIsRunning() }
+  ) async -> Bool {
+    switch readiness {
+    case .idle: false
+    case .busy: true
+    case .unreachable: await externalCommandIsRunning()
+    }
+  }
+
+  /// Any mutating `limactl`, whatever the instance: the app defers replacing an agent that may hold such a child's pipe.
+  static let limactlMutatingPattern = ForeignCommandCheck.limactlPattern()
+
+  public static func agentCommandIsRunning() async -> Bool {
+    await agentCommandIsRunning(
+      colima: { await colimaCommandIsRunning() }, limactl: { await limactlCommandIsRunning() })
+  }
+
+  static func agentCommandIsRunning(
+    colima: @Sendable () async -> Bool, limactl: @Sendable () async -> Bool
+  ) async -> Bool {
+    if await colima() { return true }
+    return await limactl()
+  }
+
+  static func limactlCommandIsRunning() async -> Bool {
+    await ForeignCommandCheck.isRunning(matching: limactlMutatingPattern)
   }
 
   public init(_ status: SMAppService.Status) {

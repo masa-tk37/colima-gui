@@ -8,6 +8,8 @@
     let settings: VMSettingsScene
     let images: ImageStoreScene
     let volumes: VolumeStoreScene
+    let machines: MachineControllerScene
+    let terminal: TerminalModelScene
   }
 
   #Preview("Root screen") {
@@ -16,7 +18,9 @@
         containers: await ContainerStorePreviews.make(.listed),
         settings: await VMSettingsModelPreviews.make(.save),
         images: await ImageStorePreviews.make(.listed),
-        volumes: await VolumeStorePreviews.make(.listed))
+        volumes: await VolumeStorePreviews.make(.listed),
+        machines: await MachineControllerPreviews.make(.mixed),
+        terminal: await TerminalModelPreviews.make(.available))
     } content: { scene in
       RootView(
         controller: scene.containers.controller,
@@ -27,7 +31,9 @@
         volumeStore: scene.volumes.store,
         networkStore: scene.containers.networks,
         slots: scene.containers.slots,
-        sessions: scene.containers.sessions
+        sessions: scene.containers.sessions,
+        machineController: scene.machines.controller,
+        terminal: scene.terminal.model
       )
       .frame(width: 1100, height: 720)
     }
