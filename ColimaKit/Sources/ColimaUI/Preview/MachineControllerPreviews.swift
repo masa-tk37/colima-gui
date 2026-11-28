@@ -20,6 +20,7 @@
       case creating
       case createCancelRequested
       case createCancelled
+      case createFailed
       case starting
       case startFailed
       case earlierSession
@@ -69,6 +70,11 @@
         await scene.create()
         await scene.cancelCreate()
         await PreviewSettle.until("the cancelled create was reported") { controller.notice != nil }
+      case .createFailed:
+        cli.configure { $0.runs = [.exits(code: 1, lines: PreviewMachineData.createFailureOutput)] }
+        await scene.read(PreviewMachineData.mixedListing)
+        await scene.startCreate()
+        await PreviewSettle.until("the create failure was kept") { !controller.failures.isEmpty }
       case .starting:
         await scene.read(PreviewMachineData.mixedListing)
         controller.requestStart(PreviewMachineData.stopped)
@@ -114,9 +120,13 @@
     }
 
     fileprivate func create() async {
+      await startCreate()
+      await showOutput(PreviewMachineData.createOutput, of: PreviewMachineData.creating)
+    }
+
+    fileprivate func startCreate() async {
       let templates = (try? await cli.listTemplates()) ?? []
       _ = await controller.create(MachineControllerPreviews.createInput, templates: templates)
-      await showOutput(PreviewMachineData.createOutput, of: PreviewMachineData.creating)
     }
 
     fileprivate func cancelCreate() async {

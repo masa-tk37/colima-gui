@@ -84,3 +84,74 @@ struct AgentExternalCommandTests {
     #expect(await AgentMain.machineCommandIsRunning(target) == false)
   }
 }
+
+@Suite("External colima detection")
+struct ColimaCommandCheckTests {
+  @Test(arguments: [
+    ["/opt/homebrew/opt/colima/bin/colima", "start", "-f"],
+    ["colima", "start", "--foreground=true"],
+    ["colima", "start", "-f=1"],
+  ])
+  func aForegroundStartIsRecognized(argv: [String]) {
+    #expect(ColimaCommandCheck.isForegroundStart(argv: argv))
+  }
+
+  @Test(arguments: [
+    ["colima", "start"],
+    ["colima", "start", "--cpu", "4", "--foreground"],
+    ["colima", "start", "-f", "work"],
+    ["colima", "start", "-p", "work", "-f"],
+    ["colima", "stop", "-f"],
+    ["colima", "delete", "-f"],
+    ["colima", "start", "--hostname", "dev -f"],
+    ["colima", "start", "--foreground=false"],
+    ["colima", "start", "-f=0"],
+    ["colima", "start", "-f", "--foreground=false"],
+    ["/usr/bin/tail", "start", "-f"],
+  ])
+  func anythingElseIsNotAForegroundStart(argv: [String]) {
+    #expect(!ColimaCommandCheck.isForegroundStart(argv: argv))
+  }
+
+  private static let foreground = ["colima", "start", "-f"]
+
+  private func isRunning(
+    pids: [pid_t]?, argv: [pid_t: [String]], children: [pid_t: Bool?], vmRunning: Bool? = true
+  ) async -> Bool {
+    await ColimaCommandCheck.isRunning(
+      pids: pids, arguments: { argv[$0] }, hasChildren: { children[$0] ?? nil },
+      defaultVMIsRunning: { vmRunning })
+  }
+
+  @Test func nothingMatchingIsNotRunning() async {
+    #expect(await isRunning(pids: [], argv: [:], children: [:]) == false)
+  }
+
+  @Test func anIdleForegroundStartIsNotRunning() async {
+    #expect(await isRunning(pids: [10], argv: [10: Self.foreground], children: [10: false]) == false)
+  }
+
+  @Test func aBootingForegroundStartIsRunning() async {
+    #expect(await isRunning(pids: [10], argv: [10: Self.foreground], children: [10: true]))
+  }
+
+  @Test func aChildlessForegroundStartWhoseVMIsNotRunningYetIsRunning() async {
+    #expect(await isRunning(pids: [10], argv: [10: Self.foreground], children: [10: false], vmRunning: false))
+    #expect(await isRunning(pids: [10], argv: [10: Self.foreground], children: [10: false], vmRunning: nil))
+  }
+
+  @Test func anUnreadableProcessCountsAsRunning() async {
+    #expect(await isRunning(pids: nil, argv: [:], children: [:]))
+    #expect(await isRunning(pids: [10], argv: [:], children: [10: false]))
+    #expect(await isRunning(pids: [10], argv: [10: Self.foreground], children: [10: nil]))
+  }
+
+  @Test func aStopBesideAnIdleForegroundStartIsRunning() async {
+    let argv: [pid_t: [String]] = [10: Self.foreground, 11: ["colima", "stop"]]
+    #expect(await isRunning(pids: [10, 11], argv: argv, children: [10: false, 11: false]))
+  }
+
+  @Test func theArgumentsOfThisProcessKeepTheirBoundaries() {
+    #expect(ColimaCommandCheck.arguments(of: getpid()) == CommandLine.arguments)
+  }
+}

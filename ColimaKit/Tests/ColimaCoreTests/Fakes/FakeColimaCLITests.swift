@@ -108,7 +108,7 @@ private func cancelledResult<T: Sendable>(
   let run = await cli.run(.stop)
   let process = await cli.process(at: 0)
   process.exit(code: 0)
-  await run.terminate()
+  #expect(await run.terminate() == false)
 
   #expect(process.terminateCount == 1)
   #expect(await collect(run) == [.exited(code: 0)])

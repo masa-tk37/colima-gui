@@ -13,9 +13,9 @@ struct LimaInvocationTests {
   }
 
   private func realPath(_ path: String) -> String {
-    var buffer = [CChar](repeating: 0, count: Int(PATH_MAX))
-    guard realpath(path, &buffer) != nil else { return path }
-    return String(cString: buffer)
+    guard let resolved = realpath(path, nil) else { return path }
+    defer { free(resolved) }
+    return String(cString: resolved)
   }
 
   private func machine(_ name: String) throws -> MachineName {

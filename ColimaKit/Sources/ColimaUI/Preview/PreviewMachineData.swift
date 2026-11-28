@@ -57,6 +57,10 @@
       "INFO[0000] Attempting to download the image  digest=\"sha256:5c1f\" location=\"https://cloud-images.ubuntu.com/releases/noble/release/ubuntu-24.04-server-cloudimg-arm64.img\"",
       "INFO[0004] Downloaded the image from \"https://cloud-images.ubuntu.com/releases/noble/release/ubuntu-24.04-server-cloudimg-arm64.img\"",
     ]
+    static let createFailureOutput = [
+      "INFO[0000] Attempting to download the image  location=\"https://cloud-images.ubuntu.com/releases/noble/release/ubuntu-24.04-server-cloudimg-arm64.img\"",
+      "FATA[0030] failed to download the image: Get \"https://cloud-images.ubuntu.com/releases/noble/release/ubuntu-24.04-server-cloudimg-arm64.img\": dial tcp: lookup cloud-images.ubuntu.com: no such host",
+    ]
     static let startOutput = [
       "INFO[0000] Using the existing instance \"cg-build\"",
       "INFO[0001] [hostagent] Starting VZ (hint: to watch the boot progress, see \"/Users/preview/.lima/cg-build/serial*.log\")",

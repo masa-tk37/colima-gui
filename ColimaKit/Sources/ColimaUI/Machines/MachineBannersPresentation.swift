@@ -4,11 +4,32 @@ import Foundation
 struct MachineBannersPresentation: Equatable {
   let notice: MachineNoticeBanner?
   let shellFailure: ShellFailureBanner?
+  /// Newest only: repeated failures would push the list out of the window.
+  let createFailure: CreateFailureBanner?
 
   @MainActor
   init(controller: MachineController, terminal: TerminalModel) {
     notice = controller.notice.map(MachineNoticeBanner.init)
     shellFailure = terminal.lastLaunchFailure.map(ShellFailureBanner.init)
+    guard controller.failures.values.contains(where: { $0.kind == .create }) else {
+      createFailure = nil
+      return
+    }
+    let rowKeys = Set(controller.rows().map(\.id))
+    createFailure = controller.failures
+      .filter { key, failure in failure.kind == .create && !rowKeys.contains(key) }
+      .max { (controller.records[$0.key]?.startedAt ?? .distantPast) < (controller.records[$1.key]?.startedAt ?? .distantPast) }
+      .map { CreateFailureBanner($0.value) }
+  }
+}
+
+struct CreateFailureBanner: Equatable {
+  let failure: MachineOperationFailure
+  let title: String
+
+  init(_ failure: MachineOperationFailure) {
+    self.failure = failure
+    title = String(localized: "Couldn't create “\(failure.name.rawValue)”", bundle: #bundle)
   }
 }
 

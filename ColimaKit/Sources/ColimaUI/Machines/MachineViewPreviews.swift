@@ -61,6 +61,10 @@
     ListPreview(scenario: .createCancelRequested)
   }
 
+  #Preview("Create failed") {
+    ListPreview(scenario: .createFailed)
+  }
+
   #Preview("Starting") {
     ListPreview(scenario: .starting)
   }

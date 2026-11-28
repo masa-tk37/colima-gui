@@ -58,6 +58,6 @@ public enum AgentMain {
   }
 
   @Sendable package static func colimaCommandIsRunning() async -> Bool {
-    await ForeignCommandCheck.isRunning(matching: "(^|/)colima (start|stop|delete)( |$)")
+    await ColimaCommandCheck.isRunning()
   }
 }

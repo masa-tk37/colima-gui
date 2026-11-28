@@ -53,8 +53,8 @@ package struct LimaInvocation: Sendable {
   }
 
   private static func resolvedPath(_ path: String) -> String? {
-    var buffer = [CChar](repeating: 0, count: Int(PATH_MAX))
-    guard realpath(path, &buffer) != nil else { return nil }
-    return String(cString: buffer)
+    guard let resolved = realpath(path, nil) else { return nil }
+    defer { free(resolved) }
+    return String(cString: resolved)
   }
 }

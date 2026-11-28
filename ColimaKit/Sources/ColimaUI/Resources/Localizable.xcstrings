@@ -1085,6 +1085,16 @@
         }
       }
     },
+    "Couldn't create “%@”" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%@」を作成できませんでした"
+          }
+        }
+      }
+    },
     "Couldn't delete the container: %@" : {
       "localizations" : {
         "ja" : {

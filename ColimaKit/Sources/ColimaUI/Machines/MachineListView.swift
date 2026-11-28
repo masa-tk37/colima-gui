@@ -33,6 +33,13 @@ public struct MachineListView: View {
       if let failure = banners.shellFailure {
         ShellFailureBannerView(banner: failure) { terminal.dismissLaunchFailure() }
       }
+      if let banner = banners.createFailure {
+        MachineFailureBox(failure: banner.failure, title: banner.title) {
+          controller.dismissFailure(for: banner.failure.name)
+        }
+        .padding(.horizontal, 12)
+        .padding(.top, 12)
+      }
       if let failure = presentation.readFailure {
         MachineReadFailureBanner(failure: failure) { Task { await controller.refreshNow() } }
       }

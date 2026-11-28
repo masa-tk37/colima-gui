@@ -92,6 +92,50 @@ struct MachineBannersPresentationTests {
     #expect(MachineBannersPresentation(controller: controller, terminal: model).shellFailure == nil)
   }
 
+  @Test func aFailedCreateWithNoRowShowsLimasOutput() async throws {
+    let shown = await banners(.createFailed)
+    let banner = try #require(shown.createFailure)
+    #expect(banner.failure.name == Data.creating)
+    #expect(banner.title.contains(Data.creating.rawValue))
+    #expect(banner.failure.outputTail == Data.createFailureOutput)
+  }
+
+  @Test func onlyTheNewestFailedCreateIsShown() async throws {
+    let scene = await MachineControllerPreviews.make(.createFailed)
+    let model = await TerminalModelPreviews.make(.available).model
+    scene.cli.configure { $0.runs = [.exits(code: 1, lines: Data.createFailureOutput)] }
+    let templates = (try? await scene.cli.listTemplates()) ?? []
+    let input = MachineFormInput(name: "later", templateID: "ubuntu", cpus: "2", memoryGiB: "4", diskGiB: "50")
+    _ = await scene.controller.create(input, templates: templates)
+    await PreviewSettle.until("the second create failure was kept") { scene.controller.failures.count == 2 }
+
+    let shown = MachineBannersPresentation(controller: scene.controller, terminal: model)
+    #expect(shown.createFailure?.failure.name.rawValue == "later")
+    scene.controller.dismissFailure(for: try #require(shown.createFailure).failure.name)
+    let next = MachineBannersPresentation(controller: scene.controller, terminal: model)
+    #expect(next.createFailure?.failure.name == Data.creating)
+  }
+
+  @Test func aFailedOperationOnAListedMachineShowsNoBanner() async {
+    #expect(await banners(.startFailed).createFailure == nil)
+  }
+
+  @Test func aFailedCreateWhoseMachineIsListedShowsNoBanner() async throws {
+    let scene = await MachineControllerPreviews.make(.createFailed)
+    let model = await TerminalModelPreviews.make(.available).model
+    let listed = Data.listing(Data.mixedListing.machines + [Data.instance(Data.creating, runState: .stopped)])
+    scene.cli.configure { $0.listing = .success(listed) }
+    await scene.controller.refreshNow()
+    #expect(MachineBannersPresentation(controller: scene.controller, terminal: model).createFailure == nil)
+  }
+
+  @Test func dismissingACreateFailureRemovesTheBanner() async {
+    let controller = await MachineControllerPreviews.make(.createFailed).controller
+    let model = await TerminalModelPreviews.make(.available).model
+    controller.dismissFailure(for: Data.creating)
+    #expect(MachineBannersPresentation(controller: controller, terminal: model).createFailure == nil)
+  }
+
   // MARK: Confirmations
 
   @Test func theDeleteConfirmationForARunningMachineSaysItIsForceStopped() async throws {

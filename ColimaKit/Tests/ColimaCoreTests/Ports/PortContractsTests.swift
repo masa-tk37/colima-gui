@@ -109,7 +109,7 @@ private struct StubFileStore: ColimaFileStore {
   let run = await StubCLI().run(.start)
   var events: [ProcessEvent] = []
   for await event in run.events { events.append(event) }
-  await run.terminate()
+  _ = await run.terminate()
   #expect(events == [.output("line"), .exited(code: 0)])
 }
 

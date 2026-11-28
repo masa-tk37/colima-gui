@@ -204,7 +204,7 @@ struct MachineControllerEditTests {
     let harness = await Harness(listing(instance("web", .stopped)), listings: [listing(instance("web", .stopped))])
     let web = machineName("web")
 
-    harness.controller.saveEdit(web, edit())
+    #expect(harness.controller.saveEdit(web, edit()) == .started)
     await harness.cli.process(at: 0).exit(code: 0)
     await harness.task(for: "web")?.value
 
@@ -218,10 +218,10 @@ struct MachineControllerEditTests {
       listing(instance("a", .stopped), instance("b", .stopped)),
       listings: [listing(instance("a", .stopped), instance("b", .stopped))])
 
-    harness.controller.saveEdit(machineName("a"), edit())
+    #expect(harness.controller.saveEdit(machineName("a"), edit()) == .started)
     await harness.cli.process(at: 0).exit(code: 0)
     await harness.task(for: "a")?.value
-    harness.controller.saveEdit(machineName("b"), edit())
+    #expect(harness.controller.saveEdit(machineName("b"), edit()) == .started)
     await harness.cli.process(at: 1).exit(code: 0)
     await harness.task(for: "b")?.value
 
@@ -264,12 +264,12 @@ struct MachineControllerEditTests {
     let harness = await Harness(
       listing(instance("a", .stopped), instance("b", .stopped)),
       listings: [listing(instance("a", .stopped), instance("b", .stopped))])
-    harness.controller.saveEdit(machineName("a"), edit())
+    #expect(harness.controller.saveEdit(machineName("a"), edit()) == .started)
     await harness.cli.process(at: 0).exit(code: 0)
     await harness.task(for: "a")?.value
     harness.cli.configure { $0.scriptedRuns = [[.exited(code: 1)]] }
 
-    harness.controller.saveEdit(machineName("b"), edit())
+    #expect(harness.controller.saveEdit(machineName("b"), edit()) == .started)
     await harness.task(for: "b")?.value
 
     #expect(harness.controller.notice == .editSaved(machineName("a")))

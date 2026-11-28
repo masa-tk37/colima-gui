@@ -144,8 +144,10 @@ private struct PanelContent: View {
   }
 }
 
-private struct MachineFailureBox: View {
+struct MachineFailureBox: View {
   let failure: MachineOperationFailure
+  /// Replaces the kind's title where no selected row names the machine.
+  var title: String?
   let dismiss: @MainActor () -> Void
 
   var body: some View {
@@ -153,7 +155,11 @@ private struct MachineFailureBox: View {
       VStack(alignment: .leading, spacing: 8) {
         HStack(alignment: .firstTextBaseline) {
           Label {
-            Text(failure.kind.failureTitle).font(.headline)
+            if let title {
+              Text(verbatim: title).font(.headline)
+            } else {
+              Text(failure.kind.failureTitle).font(.headline)
+            }
           } icon: {
             Image(systemName: "exclamationmark.triangle.fill").foregroundStyle(.orange)
           }
